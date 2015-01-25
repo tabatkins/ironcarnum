@@ -1,0 +1,1669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    
+  
+    <title>Ironcarnum, an Alternate Iron Heroes Magic System</title>
+    
+  
+    <style>
+@media print {
+  html { margin: 0 !important; }
+  body { font-family: serif; }
+  th, td { font-family: inherit; }
+  a { color: inherit !important; }
+  .example:before { font-family: serif !important; }
+  a:link, a:visited { text-decoration: none !important; }
+  a:link:after, a:visited:after { /* create a cross-ref "see..." */; }
+}
+@page {
+  margin: 1.5cm 1.1cm;
+}
+h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+figure, div.figure, div.sidefigure, pre, table.propdef, table.propdef-extra,
+.example { page-break-inside: avoid; }
+dt { page-break-after: avoid; }
+
+body {
+  background: white;
+  /* background-image: floating-margin-image-goes-here; */
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: black;
+  counter-reset: exampleno figure issue;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 2em 1em 2em 70px;
+}
+
+/* General structural markup */
+
+h1, h2, h3, h4, h5, h6 { text-align: left; }
+h1, h2, h3 { color: #005A9C; }
+h1 { font: 170% sans-serif; }
+h2 { font: 140% sans-serif; }
+h3 { font: 120% sans-serif; }
+h4 { font: bold 100% sans-serif; }
+h5 { font: italic 100% sans-serif; }
+h6 { font: small-caps 100% sans-serif; }
+h2, h3, h4, h5, h6 { margin-top: 3em; }
+h1 + h2 { margin-top: 0em; }
+h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 1.2em; }
+
+.head { margin-bottom: 1em; }
+.head h1 { margin-top: 2em; clear: both; }
+.head table { margin-left: 2em; margin-top: 2em; }
+.head dd { margin-bottom: 0; }
+
+p.copyright { font-size: small; }
+p.copyright small { font-size: small; }
+
+pre { margin: 1em 0 1em 2em; overflow: auto; }
+pre, code, .idl-code {
+  font-size: .9em;
+  font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+dt dfn code { font-size: inherit; }
+
+dfn { font-weight: bolder; }
+dfn var { font-style: normal; }
+
+s, del {text-decoration: line-through; color: red; }
+u, ins {text-decoration: underline; background: #bfa; }
+
+sup {
+  vertical-align: super;
+  font-size: 80%
+}
+
+details { display: block; }
+
+dt { font-weight: bold; }
+dd { margin: 0 0 1em 2em; }
+ul, ol { margin-left: 0; padding-left: 2em; }
+li { margin: 0.25em 2em 0.5em 0; padding-left: 0; }
+[data-md] > :first-child { margin-top: 0; }
+[data-md] > :last-child { margin-bottom: 0; }
+
+td.pre {
+  white-space: pre-wrap;
+}
+
+.css, .property { color: #005a9c; }
+.property { white-space: nowrap; }
+
+
+/* Boilerplate sections */
+
+ul.indexlist { margin-left: 0; columns: 13em; }
+ul.indexlist li { margin-left: 0; list-style: none }
+ul.indexlist li li { margin-left: 1em; }
+ul.indexlist a { font-weight: bold; }
+ul.indexlist ul, ul.indexlist dl { font-size: smaller; }
+ul.indexlist dl { margin-top: 0; }
+ul.indexlist dt { margin: .2em 0 .2em 20px; }
+ul.indexlist dd { margin: .2em 0 .2em 40px; }
+
+.toc {
+  font-weight: bold;
+  line-height: 1.3;
+  list-style: none;
+  margin: 1em 0 0 5em;
+  padding: 0;
+}
+.toc ul { margin: 0; padding: 0; font-weight: normal; }
+.toc ul ul { margin: 0 0 0 2em; font-style: italic; }
+.toc ul ul ul { margin: 0}
+.toc > li { margin: 1.5em 0; padding: 0; }
+.toc li { clear: both; }
+.toc ul.toc li { margin: 0.3em 0 0 0; }
+.toc a { border-bottom-style: none; }
+.toc a:hover, ul.toc a:focus { border-bottom-style: solid; }
+/* Section numbers in a column of their own */
+.toc span.secno {float: left; width: 4em; margin-left: -5em}
+.toc ul ul span.secno { margin-left: -7em; }
+
+table.proptable {
+  font-size: small;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  margin: 1em 0;
+}
+table.proptable td, table.proptable th {
+  padding: 0.4em;
+  text-align: center;
+}
+table.proptable tr:hover td { background: #DEF; }
+
+
+/* Links */
+
+a[href] { color: inherit; border-bottom: 1px solid silver; text-decoration: none; }
+a[href]:hover { background: #ffa; }
+a[href]:active { color: #C00; background: transparent; }
+img, a.logo { border-style: none; }
+.heading, .issue, .note, .example, li, dt { position: relative; }
+/* CSS-ish link types */
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {content: "“";}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {content: "”";}
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after { content: ""; }
+/* Element-type link styling */
+[data-link-type=element] { font-family: monospace; }
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after { content: ">" }
+/* Self-links */
+a.self-link {
+  position: absolute;
+  top: 0;
+  left: -2.5em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border: none;
+  transition: opacity .2s;
+  opacity: .5;
+}
+a.self-link:hover {
+  opacity: 1;
+}
+.heading > a.self-link {
+  font-size: 83%;
+}
+li > a.self-link {
+  left: -3.5em;
+}
+dfn > a.self-link {
+  top: auto;
+  left: auto;
+  opacity: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background: gray;
+  color: white;
+  font-style: normal;
+  transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+  opacity: 1;
+}
+dfn > a.self-link:hover {
+  color: black;
+}
+a.self-link::before { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before { content: "#"; }
+
+
+/* Figures */
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 2.5em 0;
+}
+figure.sidefigure {
+  float: right;
+  width: 50%;
+  margin: 0 0 0.5em 0.5em
+}
+figure pre {
+  text-align: left;
+  display: table;
+  margin: 1em auto;
+}
+figure table {
+  margin: auto;
+}
+figure img, figure object {
+  display: block;
+  margin: auto;
+  max-width: 100%
+}
+figcaption {
+  counter-increment: figure;
+  font-size: 90%;
+  font-style: italic;
+  text-align: center;
+}
+figcaption::before {
+  content: "Figure " counter(figure) ". ";
+  font-weight: bold;
+}
+dd figure { margin-left: -2em; }
+
+
+/* Definition tables */
+
+table.definition {
+  border-spacing: 0;
+  padding: 0 1em 0.5em;
+  width: 100%;
+  table-layout: fixed;
+  margin: 1.2em 0;
+}
+table.definition td, table.definition th {
+  padding: 0.5em;
+  vertical-align: baseline;
+  border-bottom: 1px solid #bbd7e9;
+}
+table.definition th:first-child {
+  font-style: italic;
+  font-weight: normal;
+  text-align: left;
+  width: 8.3em;
+  padding-left: 1em;
+}
+table.definition > tbody > tr:last-child > th,
+table.definition > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+table.definition tr:first-child > th,
+table.definition tr:first-child > td {
+  padding-top: 1em;
+}
+/* Footnotes at the bottom of a definition table */
+table.definition td.footnote {
+  font-style: normal;
+  padding-top: .6em;
+  width: auto;
+}
+table.definition td.footnote::before {
+  content: " ";
+  display: block;
+  height: 0.6em;
+  width: 4em;
+  border-top: thin solid;
+}
+
+
+/* IDL fragments */
+
+pre.idl {
+  padding: .5em 1em;
+  margin: 1.2em 0;
+}
+pre.idl :link, pre.idl :visited {
+  color:inherit;
+  background:transparent;
+}
+
+
+/* Data tables */
+/* Comes in plain, long, complex, or define varieties */
+
+.data {
+  margin: 1em auto;
+  border-collapse: collapse;
+  width: 100%;
+  border: hidden;
+}
+.data {
+  text-align: center;
+  width: auto;
+}
+.data caption {
+  width: 100%;
+}
+.data td, .data th {
+  padding: 0.5em;
+  border-width: 1px;
+  border-color: silver;
+  border-top-style: solid;
+}
+.data thead td:empty {
+  padding: 0;
+  border: 0;
+}
+.data thead th[scope="row"] {
+  text-align: right;
+  color: inherit;
+}
+.data thead,
+.data tbody {
+  color: inherit;
+  border-bottom: 2px solid;
+}
+.data colgroup {
+  border-left: 2px solid;
+}
+.data tbody th:first-child,
+.data tbody td[scope="row"]:first-child {
+  text-align: right;
+  color: inherit;
+  border-right: 2px solid;
+  border-top: 1px solid silver;
+  padding-right: 1em;
+}
+.data.define td:last-child {
+  text-align: left;
+}
+.data tbody th[rowspan],
+.data tbody td[rowspan] {
+  border-left: 1px solid silver;
+}
+.data tbody th[rowspan]:first-child,
+.data tbody td[rowspan]:first-child {
+  border-left: 0;
+  border-right: 1px solid silver;
+}
+.data.complex th,
+.data.complex td {
+  border: 1px solid silver;
+}
+.data td.long {
+ vertical-align: baseline;
+ text-align: left;
+}
+.data img {
+  vertical-align: middle;
+}
+
+
+/* Switch/case <dl>s */
+
+dl.switch {
+ padding-left: 2em;
+}
+dl.switch > dt {
+ text-indent: -1.5em;
+}
+dl.switch > dt:before {
+ content: '↪';
+ padding: 0 0.5em 0 0;
+ display: inline-block;
+ width: 1em;
+ text-align: right;
+ line-height: 0.5em;
+}
+
+
+/* Style for At Risk features (intended as editorial aid, not intended for publishing) */
+.atrisk::before {
+ position: absolute;
+ margin-left: -5em;
+ margin-top: -2px;
+ padding: 4px;
+ border: 1px solid;
+ content: 'At risk';
+ font-size: small;
+ background-color: white;
+ color: gray;
+ border-radius: 1em;
+ text-align: center;
+}
+
+
+/* Obsoletion notice */
+details.annoying-warning[open] {
+  background: #fdd;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  padding: .5em;
+  border: thick solid red;
+  border-radius: 1em;
+  position: fixed;
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
+  z-index: 1000;
+}
+details.annoying-warning:not([open]) > summary {
+  background: #fdd;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  padding: .5em;
+}
+
+
+/* Examples */
+
+.example {
+  counter-increment: exampleno;
+}
+.example::before {
+  content: "Example";
+  content: "Example " counter(exampleno);
+  min-width: 7.5em;
+  text-transform: uppercase;
+  display: block;
+}
+.illegal-example::before {
+  content: "Invalid Example";
+  content: "Invalid Example" counter(exampleno);
+}
+.example, .illegal-example, .html, .illegal-html, .xml, .illegal-xml {
+  padding: 0.5em;
+  margin: 1em 0;
+  position: relative;
+  clear: both;
+}
+pre.example, pre.illegal-example, pre.html,
+pre.illegal-html, pre.xml, pre.illegal-xml {
+  padding-top: 1.5em;
+}
+.illegal-example { color: red; }
+.illegal-example p { color: black; }
+.html { color: #600; }
+.illegal-html { color: red; }
+.illegal-html p { color: black; }
+.xml { color: #600; }
+.illegal-xml { color: red; }
+.illegal-xml p { color: black; }
+code.css { font-family: inherit; font-size: 100% }
+code.html { color: #600 } /* inline HTML */
+code.xml { color: #600 }  /* inline XML */
+
+
+/* Issues */
+
+.issue {
+  border-color: #E05252;
+  background: #FBE9E9;
+  counter-increment: issue;
+}
+.issue:before {
+  content: "Issue " counter(issue);
+  padding-right: 1em;
+  text-transform: uppercase;
+  color: #E05252;
+}
+
+
+/* Whys */
+
+details.why > summary {
+  font-style: italic;
+}
+details.why[open] > summary {
+  border-bottom: 1px silver solid;
+}
+
+
+/* All the blocks get similarly styled */
+
+table.definition, pre.idl, .example, .note, details.why, .issue {
+  border: none;
+  border-left: .5em solid black;
+  border-left: .5rem solid black;
+}
+.issue, .note, .example, .why {
+  padding: .5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+table.definition, pre.idl {
+  background: hsl(210, 70%, 95%);
+  border-color: hsl(210, 80%, 75%);
+}
+.example {
+  background: hsl(50, 70%, 95%);
+  border-color: hsl(50, 70%, 60%);
+}
+.example::before {
+  color: hsl(50, 70%, 60%);
+}
+.note, details.why {
+  background: hsl(120, 70%, 95%);
+  border-color: hsl(120, 70%, 60%);
+}
+.note::before {
+  color: hsl(120, 70%, 60%);
+}
+.issue {
+  background: hsl(0, 70%, 95%);
+  border-color: hsl(0, 70%, 60%);
+}
+.issue::before {
+  color: hsl(0, 70%, 60%);
+}
+span.issue, span.note {
+  padding: .1em .5em .15em;
+  border-right-width: .5em;
+  border-right-style: solid;
+}
+  </style>
+    
+
+  </head>
+  
+
+  <body class="h-entry">
+
+    <div class="head">
+  
+      <p data-fill-with="logo"></p>
+  
+      <h1 class="p-name no-ref" id="title">Ironcarnum, an Alternate Iron Heroes Magic System</h1>
+  
+      <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
+    <time class="dt-updated" datetime="2015-01-25">25 January 2015</time></span></h2>
+  
+      <div data-fill-with="spec-metadata">
+        <dl>
+          <dt>This version:</dt>
+          <dd><a class="u-url" href="https://tabatkins.github.io/ironcarnum/">https://tabatkins.github.io/ironcarnum/</a></dd>
+          <dt class="editor">Editor:</dt>
+          <dd class="editor">
+            <div class="p-author h-card vcard"><a class="p-name fn u-url url" href="http://xanthir.com">Tab Atkins Jr</a> <a class="u-email email" href="mailto:jackalmage@gmail.com">jackalmage@gmail.com</a></div>
+          </dd>
+        </dl>
+      </div>
+  
+      <div data-fill-with="warning"></div>
+  
+      <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
+To the extent possible under law, the editors have waived all copyright
+and related or neighboring rights to this work.
+In addition, as of 25 January 2015,
+the editors have made this specification available under the
+<a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
+which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
+Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document.
+</p>
+  
+      <hr title="Separator for header">
+</div>
+
+
+    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+
+    <div class="p-summary" data-fill-with="abstract">
+      <p>The Ironcarnum magic system is an alternate magic system for the Iron Heroes RPG, which is entirely feat-driven and mechanically integrated into the rest of the IH ruleset, so that any character can dabble or specialize in magic.</p>
+
+</div>
+
+    <div data-fill-with="at-risk"></div>
+
+
+    <h2 class="no-num no-toc no-ref heading settled" id="contents"><span class="content">Table of Contents</span></h2>
+
+    <div data-fill-with="table-of-contents" role="navigation">
+      <ul class="toc" role="directory">
+        <li><a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
+          <ul class="toc">
+            <li><a href="#design-philosophy"><span class="secno">1.1</span> <span class="content">Design Philosophy</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#using-ironcarnum"><span class="secno">2</span> <span class="content">Using Ironcarnum</span></a>
+          <ul class="toc">
+            <li><a href="#other-alterations"><span class="secno">2.1</span> <span class="content">Other Alterations</span></a></li>
+            <li><a href="#magic-in-your-world"><span class="secno">2.2</span> <span class="content">Magic in your World</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#general-rules"><span class="secno">3</span> <span class="content">General Rules</span></a>
+          <ul class="toc">
+            <li><a href="#learning-arcana"><span class="secno">3.1</span> <span class="content">Learning Arcana</span></a></li>
+            <li><a href="#types-of-arcana"><span class="secno">3.2</span> <span class="content">Types of Arcana</span></a></li>
+            <li><a href="#using-arcana"><span class="secno">3.3</span> <span class="content">Using Arcana</span></a></li>
+            <li><a href="#focusing-ladening"><span class="secno">3.4</span> <span class="content">Focusing and Ladening spells</span></a></li>
+            <li><a href="#arcana-in-combat"><span class="secno">3.5</span> <span class="content">Arcana In Combat</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#talismans"><span class="secno">4</span> <span class="content">Talismans</span></a>
+          <ul class="toc">
+            <li><a href="#constructing-talismans"><span class="secno">4.1</span> <span class="content">Constructing Talismans</span></a></li>
+            <li><a href="#example-talismans"><span class="secno">4.2</span> <span class="content">Example Talismans</span></a></li>
+            <li><a href="#hand-seals"><span class="secno">4.3</span> <span class="content">Hand Seals</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#energy-types"><span class="secno">5</span> <span class="content">Appendix A: Energy Types</span></a></li>
+        <li><a href="#dice-progression"><span class="secno">6</span> <span class="content">Appendix B: Dice Progression</span></a></li>
+        <li><a href="#conformance"><span class="secno"></span> <span class="content">
+Conformance</span></a></li>
+        <li><a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+          <ul class="toc">
+            <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#index"><span class="secno"></span> <span class="content">Index</span></a></li>
+      </ul></div>
+
+    <main>
+
+
+
+      <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+
+
+      <blockquote>
+	“You are not your magic weapon and armor.
+	You are not your spell buffs.
+	You are not how much gold you have,
+	or how many times you’ve been raised from the dead.
+	When a Big Bad Demon snaps your sword in two,
+	you do not cry because that was your holy avenger.
+	You leap onto its back, climb up to its head, and punch it in the eye,
+	then get a new damn sword off of the next humanoid you headbutt to death.”
+</blockquote>
+
+
+      <p><a href="http://en.wikipedia.org/wiki/Iron_Heroes">Iron Heroes</a> is a D20-system RPG,
+descended from D&amp;D 3.5,
+which focuses almost entirely on <em>martial</em> prowess and personal abilities,
+rather than the spellcaster-dominated and magic item-driven gameplay typical of D&amp;D.
+Being martial-focused does not mean martial-exclusive, though--
+many heroic sword-and-shield stories involve at least a little magic among the heroes.
+Unfortunately, the default magic system in Iron Heroes is terrible.
+It’s very badly balanced, totally uninspired thematically,
+and mechanically <em>completely separate</em> from the entire rest of the game’s ruleset--
+nothing but the core notion of "damage" and "rolls" is shared between it and the rest of the game.</p>
+
+
+      <p>Ironcarnum is an alternate magic system for Iron Heroes,
+with no relation to the default one.
+It is almost entirely composed of Feat Masteries,
+like most abilities in Iron Heroes,
+so any character can dabble or specialize in magic, as they desire.
+It introduces a new class, the <a data-link-type="dfn">Arcanist</a>, who specializes in magic,
+but characters are not required to take this class to use magic.</p>
+
+
+      <h3 class="heading settled" data-level="1.1" id="design-philosophy"><span class="secno">1.1. </span><span class="content">Design Philosophy</span><a class="self-link" href="#design-philosophy"></a></h3>
+
+
+      <p>Ironcarnum is a magic system designed with very specific goals in mind.
+First, create a magic system that is equally useful to any class,
+and not limited to a single class.
+Second, integrate the magic system into the existing rules as much as possible,
+eliminating any concept that is merely a magical version of something that already exists.
+Third, cover only the magic that is useful to adventurers,
+and ignore trivial magic or magic that is best handled by storytelling rather than rigid rules.
+Finally, make sure that magic is simple, flexible, and fun,
+just like the rest of Iron Heroes.</p>
+
+
+      <p>In order to do this,
+I’ve decided that the best form for a magic system to take is simply that of a new Mastery category.
+This allows me to avoid creating new basic structural mechanics;
+instead, I can rely on the excellent feat mastery system
+to ensure that anyone who wants it has access to useful magic.
+Feat masteries enable a player to jump into a new mechanic late in character development
+and still get all the juicy, level-appropriate abilities at the top
+without making people who’ve stuck with it since the beginning feel cheated.
+As well, it provides a basic balance level to follow,
+so overall balancing of the system is much less difficult.</p>
+
+
+      <p>In addition, I have broken with D&amp;D tradition in several places
+so that I can use existing mechanics as much as possible.
+By doing this, I ensure that someone can start using Ironcarnum at any level
+and immediately apply the full force of their existing levels,
+rather than being stuck with initiate magics that failed to be effective 10 levels ago.
+For example, casting a damaging spell relies on your BAB,
+not an unnecessary "caster level" stat that serves the same purpose.
+As well, damaging spells are cast as attack actions and do damage similar to weapons.
+This is a large break from most magical systems,
+where you might expect to see a fireball take a standard action to cast
+and deal a handful of d6s of damage.
+However, this also makes the entire system much easier to balance,
+and meshes it into existing mechanics quite firmly.
+There’s no need for Quicken Spell when Two-Weapon Fighting gives you extra attacks
+that you can use to cast additional spells.
+This allows me to avoid further unnecessary duplication of mechanics.</p>
+
+
+      <p>All of these changes may seem radical at first,
+but I believe they are ultimately for the best.
+Read up on the system, check out the rules,
+and skim the feat descriptions.</p>
+
+
+      <p>I think you’ll be pleasantly surprised.</p>
+
+
+
+      <h2 class="heading settled" data-level="2" id="using-ironcarnum"><span class="secno">2. </span><span class="content">Using Ironcarnum</span><a class="self-link" href="#using-ironcarnum"></a></h2>
+
+
+      <p>Many readers have contacted me saying that, while they like Ironcarnum, they can’t see it fitting into their game. A bit of exploration reveals the problem - they don’t like certain assumptions that I make about how the system should be used. Luckily, these assumptions can be trivially changed, allowing Ironcarnum to be integrated into virtually any game with any flavor. I present to you several possible approaches that one may use to integrate Ironcarnum into their game.</p>
+
+
+      <dl>
+        <dt data-md="">
+          <p>The Liberal Approach (the default)</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Magic is a skill like any other, merely something that must be learned. True Magic requires dedicating your life to study, but most adventurers pick up the knack for battlemagic during their travels. As such, everyone gets access to the Arcane group and can cast spells (though for most people, this falls under the Other category, and so will never be too strong).</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>The Middle Approach</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Every person has a spark of magic within them that grows naturally with their strength, but they must be introduced to it before they may begin to wield the power eldritch. All classes gain access to the Arcane category, but they must take at least one level of Arcanist before they may actually take Arcane feats. Here, the Arcanist class acts as a gatekeeper, allowing you to restrict access to magic (by restricting access to the class) but still follow the assumption of level-appropriate power that Ironcarnum is built on.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>The Conservative Approach</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Magic is a study that one must dedicate their life to. Though any adventurer <em>could</em> learn magic, it requires them to spend much personal effort to do so; there is little place for a dabbler in the world. Only the Arcanist class gains access to the Arcane category - other classes will never be able to cast spells, and levels in other classes do not increase your skill with magic.</p>
+          
+
+
+        </dd></dl>
+
+      <h3 class="heading settled" data-level="2.1" id="other-alterations"><span class="secno">2.1. </span><span class="content">Other Alterations</span><a class="self-link" href="#other-alterations"></a></h3>
+
+
+      <p>Ironcarnum may be easily modified in many other ways to suit your game beyond the simple question of access. Here are but a few:</p>
+
+
+      <dl>
+        <dt data-md="">
+          <p>Specific Paths</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Rather than allowing a character to choose a mental stat to use as their <a data-link-type="dfn">Source</a>
+(adding to attack and damage with battlespells,
+and occasionally playing a part in other spells),
+select a specific mental stat that must be employed.
+Some spells favor the intellectual approach,
+while others require a more contemplative outlook;
+still others are best called to service by your raw need.
+Different spellcasters naturally sort into disciplines based on their mental abilities--
+it is a rare prodigy that can wield all forms of magic well.
+One may be even more selective with this if one wishes,
+and say that <em>only</em> a specific stat is for magic (say, Int).</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>Magic is Corrupting</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Whenever a character ladens a spell,
+they must resist or fall under the sway of arcane corruption.
+I cannot recommend Jeremy Puckett’s Arcane Corruption rules enough.
+Actually employing the effects of Corruption and Taint require a little bit of work,
+but can be ported easily enough,
+as the ruleset was specifically designed to be generic.</p>
+          
+
+
+        </dd></dl>
+
+      <h3 class="heading settled" data-level="2.2" id="magic-in-your-world"><span class="secno">2.2. </span><span class="content">Magic in your World</span><a class="self-link" href="#magic-in-your-world"></a></h3>
+
+
+      <p>Ironcarnum is designed with specific assumptions about how it fits into a world.
+I have outlined several ways to change how Ironcarnum works
+to make it easier to adapt these rules into your own world.
+The more you know about my hidden assumptions, though, the better,
+so this section will outline the specific niche I see Ironcarnum as filling.</p>
+
+
+      <p>Essentially, I divide magic into three categories of use,
+based on relative power and how much they affect the world.
+I call these categories <a data-link-type="dfn" href="#cantrips">Cantrips</a>, <a data-link-type="dfn" href="#battlemagic">Battlemagic</a>, and <a data-link-type="dfn" href="#true-magic">True Magic</a>.</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="cantrips">Cantrips<a class="self-link" href="#cantrips"></a></dfn> are magical effects that are utterly insignificant in effect.
+Allowing these into the world doesn’t change a thing except a bit of flavor.
+Who cares if people can light candles with their mind,
+or float small objects that are just beyond arm’s length?
+Matches and walking a few feet accomplish the same effect at no cost.
+We don’t need rules on using matches,
+and so we don’t need rules on summoning a tiny bit of flame to hand.
+The ease and prevalence of cantrips is something unique to each world,
+but no world needs to put rules into place for these.
+My personal preference is to allow any flavorful cantrip
+that reasonably falls under the purview of a spell they have.
+If a caster has a flame-based battlespell,
+they can light candles and torches.
+If they have one based on telekinesis,
+they can float items around.</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="battlemagic">Battlemagic<a class="self-link" href="#battlemagic"></a></dfn> is effects that are powerful enough to warrant restriction,
+but not powerful enough to change the world.
+In other words, just right to be handled by a ruleset.
+This is where Ironcarnum lies.
+Killing an enemy,
+touching a mind the next city over,
+and defending against dragonfire are all battlemagic-level effects.
+The effects of battlemagic should be small in both extent and duration.</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="true-magic">True Magic<a class="self-link" href="#true-magic"></a></dfn> is the stuff of legend,
+magic that stories are centered on.
+This category covers spells that are permanent, long-lasting,
+or otherwise not well-suited to be balanced by action costs.
+Battlemagic can kill a person,
+but True Magic can kill an army.
+Battlemagic can heal an ally,
+but True Magic can revive a forest.
+Battlemagic can focus magic through an item,
+but True Magic can make the item itself magical.
+True Magic isn’t covered by explicit rules like battlemagic,
+but is rather judged more by a careful eye on the effect.
+Powerful spells should take time and resources.
+As with cantrips, the ease and prevalence of True Magic may vary from world to world,
+and even from area to area within a world.</p>
+
+
+
+      <p>I do not believe I am doing anything radical in making this division.
+D&amp;D does precisely this with everything <em>but</em> magic.
+Wielding a fork during dinner is too simple to cover with rules,
+while building a bridge is too complex to be accurately modelled,
+and so it is instead given an extremely broad and fuzzy "rule"
+which requires high amounts of personal adjudication.
+It is only activities right on the boundary,
+like combat and interpersonal relations,
+that are given actual detailed rules.</p>
+
+
+      <p>As soon as D&amp;D hits the magic chapter, though,
+it throws all those principles out the window.
+Suddenly every possible use of magic must be covered by rules,
+and must be fit into the spell slot paradigm as well.
+This results in silliness like, well, cantrips (0th level spells),
+and then excesses like <a href="http://www.d20srd.org/srd/spells/stormOfVengeance.htm">Storm of Vengeance</a>.
+Ironcarnum attempts to avoid this by explicitly restricting itself to the middle zone
+where rules are useful and simple.</p>
+
+
+
+      <h2 class="heading settled" data-level="3" id="general-rules"><span class="secno">3. </span><span class="content">General Rules</span><a class="self-link" href="#general-rules"></a></h2>
+
+
+      <h3 class="heading settled" data-level="3.1" id="learning-arcana"><span class="secno">3.1. </span><span class="content">Learning Arcana</span><a class="self-link" href="#learning-arcana"></a></h3>
+
+
+      <p>New magical abilities are gained through \[Arcane] feats.
+The <a data-link-type="dfn">Arcanist</a> class provides additional options,
+allowing one to use magic better than other characters at the expense of other abilities.</p>
+
+
+      <h3 class="heading settled" data-level="3.2" id="types-of-arcana"><span class="secno">3.2. </span><span class="content">Types of Arcana</span><a class="self-link" href="#types-of-arcana"></a></h3>
+
+
+      <p>Arcana is generally divided into two types of magic, <a data-link-type="dfn">battlespells</a> and personal spells.
+Any magic that can harm a foe is a <a data-link-type="dfn">battlespell</a>,
+while magic that increases your own abilities is personal.
+Both use essentially the same rules,
+but it is useful to draw the distinction in many cases.</p>
+
+
+      <h3 class="heading settled" data-level="3.3" id="using-arcana"><span class="secno">3.3. </span><span class="content">Using Arcana</span><a class="self-link" href="#using-arcana"></a></h3>
+
+
+      <p><a data-link-type="dfn" href="#talisman">Talismans</a> are arcane weapons
+used to channel offensive spells.
+Attacking with magic acts exactly like attacking with any other weapon:
+it uses attack actions, etc.
+See <a data-section="" href="#talismans">§4 Talismans</a> for further details on their rules and use.</p>
+
+
+      <p>Personal spells are almost always continuous abilities,
+providing a benefit without any action required on your part.
+Some spells do require an action to use the spell or to gain additional benefits;
+if so, they will specify this in their description.
+See <a data-section="" href="#durations"></a> for further details.</p>
+
+
+      <h3 class="heading settled" data-level="3.4" id="focusing-ladening"><span class="secno">3.4. </span><span class="content">Focusing and Ladening spells</span><a class="self-link" href="#focusing-ladening"></a></h3>
+
+
+      <p>Practiced mages can focus their attention on particular spells,
+increasing the mana flow to them and thus their power.
+Many spells have <a data-link-type="dfn">Focus Options</a> given as part of their descriptions.
+These are special abilities that increase the strength of the spell or provide additional abilities.
+To activate them, you must spend some amount of Focus Tokens,
+specified in the Focus Option listing.
+Spending Focus tokens is not an action,
+and can be done at any time during your turn.</p>
+
+
+      <p>Mages can also temporarily surge their mana flow,
+powering up a spell far beyond normal means at the cost of severely stressing their bodies.
+You can <a data-link-type="dfn">Overchannel</a> at any time
+to either gain more <a data-link-type="dfn">Focus</a> or to <a data-link-type="dfn">laden</a> a spell for a special high-powered effect.
+However, you must then rest,
+and are unable to <a data-link-type="dfn">overchannel</a> again for several rounds
+(though you can continue to cast ordinary spells).</p>
+
+
+      <h3 class="heading settled" data-level="3.5" id="arcana-in-combat"><span class="secno">3.5. </span><span class="content">Arcana In Combat</span><a class="self-link" href="#arcana-in-combat"></a></h3>
+
+
+      <p>You use arcana in combat as you would any other ability.
+Magic may allow you to bend the rules of the universe,
+but it doesn’t change the rules of the game.
+If there are any interactions that aren’t covered explicitly in this document,
+assume that Ironcarnum magic is just another ability and adjudicate accordingly.</p>
+
+
+
+      <h2 class="heading settled" data-level="4" id="talismans"><span class="secno">4. </span><span class="content">Talismans</span><a class="self-link" href="#talismans"></a></h2>
+
+
+      <blockquote>
+	While entire treatises have been written on the subject,
+	the essential distinction between <i>Ars Magna</i> and <i>Ars Arcana</i>,
+	science and magic,
+	is that of doing and meaning.
+	An artifact of science simply works,
+	but an artifact of magic requires an agreement between all parties.
+</blockquote>
+
+
+      <p>Magic is essentially the reshaping of meaning,
+and mageduels can be compared to a debate.
+While using personal arcana is relatively easy,
+when you attempt to use arcana on an enemy
+you may be surprised to find that they have a say in whether or not you succeed.
+A powerful will can overcome their resistance,
+but using the proper tools to lend weight to your argument makes this task easier.</p>
+
+
+      <p>Talismans are items composed of materials that have powerful mystic resonances with certain concepts.
+Rather than creating the spellform from scratch with every casting,
+a mage with a talisman may concentrate on simply projecting and strengthening
+the resonance already present in the talisman,
+making it far easier to wield the spell.
+For example, wood ash is strongly associated with fire,
+and so may be integrated into a talisman meant to aid in fire spells.</p>
+
+
+      <p>A <dfn data-dfn-type="dfn" data-noexport="" id="talisman">talisman<a class="self-link" href="#talisman"></a></dfn> is an \[Arcane] weapon,
+used to channel offensive spells.
+Talismans act exactly like any other weapon,
+and are used the same way,
+with the following differences:</p>
+
+
+      <ul>
+        <li data-md="">
+          <p>They use a mage’s <a data-link-type="dfn">Source</a> to determine attack and damage bonuses,
+rather than Strength or Dexterity.</p>
+          
+
+        </li>
+        <li data-md="">
+          <p>They are all Exotic weapons,
+and can’t be used untrained unless the wielder has at least one point of \[Arcane] mastery.</p>
+          
+
+        </li>
+        <li data-md="">
+          <p>They may cause <a data-link-type="dfn" href="#energy">energy</a> damage, rather than physical, and may be opposed by a save, rather than Defense
+(depending on the talisman).</p>
+          
+
+        </li>
+        <li data-md="">
+          <p>Talisman damage <em>is</em> affected by the handedness of the talisman,
+but <strong>not</strong> by its size.
+A <a data-link-type="dfn" href="#prismatic-wand">Prismatic Wand</a> sized for a Tiny pixie
+and one sized for a Huge ogre
+both do the same amount of damage.</p>
+          
+
+
+          <details class="why">
+	
+            <summary>Why does handedness affect damage, but not size?</summary>
+	For flavor, and mechanical consistency with magic in other systems.
+
+
+            <p>Allowing handedness to affect damage increases the variety of talisman stats,
+	which is a good thing,
+	and makes it play better with weapon rules,
+	some of which depend on 1H or 2H weapon use.
+	Thematically, the handedness of a talisman represents the amount of concentration required to wield it,
+	and means that big flashy wizard staffs are more powerful than handheld wands.</p>
+
+
+            <p>On the other hand,
+	magic has always been the preferred weapon of the tiny,
+	because its damage doesn’t scale with body size.
+	Maintaining that invariant with talismans preserves the right flavor.</p>
+</details>
+          
+
+        </li></ul>
+
+      <p>Any feat that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well,
+such as Two-Weapon Fighting, Whirlwind Attack, or Weapon Focus.</p>
+
+
+      <p class="note" role="note">Note: Talismans never have \[Power] or \[Finesse] descriptors
+(though see <a data-link-type="dfn">Battlespell Mastery</a>),
+which does limit what kinds of feats can be used with <a data-link-type="dfn" href="#talisman">talismans</a>.
+Similarly, though, some feats defined in this document
+require the use of an \[Arcane] weapon,
+and so can’t be used with normal weapons.</p>
+
+
+      <p>Similarly, any other rules that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well:
+you count as armed while wielding a <a data-link-type="dfn" href="#talisman">talisman</a> you’re proficient with;
+melee <a data-link-type="dfn" href="#talisman">talismans</a> threaten an area around themselves
+and can be used to take attacks of opportunity, etc.</p>
+
+
+      <p>If a <a data-link-type="dfn" href="#talisman">talisman</a> is opposed by a save, rather than Defense,
+the attack roll is made first;
+a natural 20 or natural 1 is an automatic hit or miss, as normal.
+Otherwise, the result of the attack roll sets the DC for the target’s save,
+with a failed save meaning the battlespell hits.
+If the attack hits and threatens a critical,
+make the confirmation roll in the same way--
+roll attack,
+then roll the save with a DC equal to the attack’s result,
+with a failed save meaning the critical is confirmed.</p>
+
+
+
+      <h3 class="heading settled" data-level="4.1" id="constructing-talismans"><span class="secno">4.1. </span><span class="content">Constructing Talismans</span><a class="self-link" href="#constructing-talismans"></a></h3>
+
+
+      <p><a data-link-type="dfn" href="#talisman">Talismans</a> should have as much variety in construction as normal weapons,
+but rather than create another boring table of dry statistics,
+all the diversity can be boiled down into a simple construction process.</p>
+
+
+      <p>To construct a <a data-link-type="dfn" href="#talisman">talisman</a>,
+make one choice from each of the five categories in the table below.
+The total point cost of your choices
+(shown in parentheses by each choice)
+must equal 3.</p>
+
+
+      <dl>
+        <dt data-md="">
+          <p>Damage (Light/1H/2H)</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>(0) 1d4 / 1d6 / 1d10</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) 1d6 / 1d8 / 2d6</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(2) 1d8 / 1d10 / 2d8</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(3) 1d10 / 1d12 / 3d6</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>Critical</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>(0) 20/x2</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) 19-20/x2</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) 20/x3</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(2) 18-20/x2</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(2) 20/x4</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>Range</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>(0) Melee only</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(0) Ranged only (50' range increment)</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) Melee and ranged (30' range increment)</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>Damage Type</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>(0) Physical (Select Bludgeoning, Slashing, or Piercing; DR applies)</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(0) <a data-link-type="dfn" href="#common">Common Energy</a> (Energy Resistance applies)</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) <a data-link-type="dfn" href="#exotic">Exotic Energy</a></p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p>Opposed By</p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>(0) Defense</p>
+          
+
+        </dd>
+        <dd data-md="">
+          <p>(1) Saving Throw (Select Fortitude, Reflex, or Will)</p>
+          
+
+        </dd></dl>
+
+      <p>All <a data-link-type="dfn" href="#talisman">talismans</a> have the \[Arcane] descriptor.</p>
+
+
+      <p class="note" role="note">Note: In addition to the stats decided on here,
+<a data-link-type="dfn" href="#talisman">talismans</a> get an additional ability for proficient wielders who take EM 3 of <a data-link-type="dfn">Battlespell Mastery</a>.
+Players should work with their DMs to decide on a flavorful, interesting, and appropriately powered ability.
+The talismans presented in <a data-section="" href="#example-talismans">§4.2 Example Talismans</a> give a number of examples
+to use as guidance.</p>
+
+
+
+      <h3 class="heading settled" data-level="4.2" id="example-talismans"><span class="secno">4.2. </span><span class="content">Example Talismans</span><a class="self-link" href="#example-talismans"></a></h3>
+
+
+      <p>These are fully-constructed battlespells for instruction and inspiration.
+The listings include the full mechanics,
+as well as the special ability given by <a data-link-type="dfn">Battlespell Mastery</a> EM 3.</p>
+
+
+      <dl>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="dranrak">Dran’rak<a class="self-link" href="#dranrak"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>This <a data-link-type="dfn" href="#talisman">talisman</a> is used by the Wolves of Aarkun,
+a knightly order of telekinetic warriors.
+It is composed of a whirling storm of heavy metal spheres,
+telekinetically animated.
+It is a Light weapon that deals 1d8 20/x2 Bludgeoning damage in both melee and ranged combat,
+and is opposed by Defense.
+EM3 gives them the control to add blades to their armament,
+changing the damage type to Bludgeoning AND Slashing AND Piercing.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="silken-blade">Silken Blade<a class="self-link" href="#silken-blade"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>An order of courtesan ninjas who run their intrigues in the courts of Keria use this <a data-link-type="dfn" href="#talisman">talisman</a>.
+The silken sleeves of their robes, when charged with arcane power,
+gain rigid cutting edges.
+It is a Light weapon that deals 1d6 19-20/x2 Slashing damage in melee,
+and is opposed by Reflex.
+EM3 makes the silk flow again, making it a Tripping weapon.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="giftmesser">Giftmesser<a class="self-link" href="#giftmesser"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Rarely seen in combat, the Giftmesser is a dark creation of the Ancients,
+a genegineered insect which burrows into the wielder’s wrist and exposes its stinger.
+It is a Light weapon which deals 1d4 20/x2 Poison (<a data-link-type="dfn" href="#exotic">exotic</a>) damage in melee,
+and is opposed by Fort.
+EM3 makes it even deadlier:
+the <a data-link-type="dfn" href="#talisman">talisman</a> is treated as a Dagger,
+and deals 1 Con damage on a critical hit.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="mindlash">Mindlash<a class="self-link" href="#mindlash"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>Thought long to be extinct,
+the psionic blood of the Emperor Of Man recently resurfaced among the people of Sudoyon.
+For people with the right gift, a simple cat-eye stone, held in the hand,
+lets them focus punishing psychic power on their enemies.
+It is a Light weapon that does 1d6 20/x2 Piercing damage in both melee and ranged combat,
+and is opposed by Will.
+EM3 heightens the psychic assault:
+on a critical hit, the target is Stunned for a round.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="prismatic-wand">Prismatic Wand<a class="self-link" href="#prismatic-wand"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>A common <a data-link-type="dfn" href="#talisman">talisman</a> among the highmages of lost Kyklos,
+the Prismatic Wand can serve almost any purpose for a gifted wielder.
+It is a 1H weapon that deals 1d8 20/x3 Fire damage in long-range combat,
+and is opposed by Reflex.
+EM3 is where it acquires its name;
+as a standard action,
+the caster can change the damage type to any other common energy.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="scholarss-sword">Scholars’s Sword<a class="self-link" href="#scholarss-sword"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>A few runes on a training sword produce this ubiquitous <a data-link-type="dfn" href="#talisman">talisman</a>,
+often seen in warcamps to let the scribes and other “intellectuals” with minor arcane training
+defend themselves in case the camp is overrun.
+It almost wields itself!
+It is a 1H weapon that deals 1d8 20/x2 Slashing damage in melee combat,
+and is opposed by Reflex.
+At EM3 it actually wields itself:
+a whispered command causes it to float in the air and defend the square its in,
+dealing 1d8 damage to anyone who passes through the square
+and counting as partial cover
+as long as the command-giver maintains Concentration and line of sight,
+and for three rounds afterward.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="shard-cannon">Shard Cannon<a class="self-link" href="#shard-cannon"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>The gearheads of Aarkan love tinkering,
+especially when they can ground their magic in reality enough
+for their inventions to work outside of their labs.
+The Shard Cannon <a data-link-type="dfn" href="#talisman">talisman</a> uses high-energy refrigeration technology
+to condense water out of the air into hard spikes of ice,
+then propels them at high velocity.
+It is a 2H weapon that deals 2d8 20/x3 Cold damage at range,
+and is opposed by Defense.
+EM3 has the refrigeration process tweaked
+to create shards which explode on impact into a hail of subzero material:
+on a critical hit, the Shard Cannon deals an additional 4d8 points of Cold damage.</p>
+          
+
+
+        </dd>
+        <dt data-md="">
+          <p><dfn data-dfn-type="dfn" data-noexport="" id="staff-of-augustus">Staff of Augustus<a class="self-link" href="#staff-of-augustus"></a></dfn></p>
+          
+
+        </dt>
+        <dd data-md="">
+          <p>The Augustinian Conclave consecrates these holy staves as ceremonial instruments for any temple leaders.
+In a pinch, though, they function as powerful <a data-link-type="dfn" href="#talisman">talismans</a>,
+particularly good at warding off demons.
+It is a 2H weapon that deals 1d10 Holy (<a data-link-type="dfn" href="#exotic">exotic</a>) damage in both melee and ranged combat,
+and is opposed by Will.
+EM 3 gives it the power to banish evil:
+every time a demon is damaged by the weapon it is pushed 20' away from the wielder.</p>
+          
+
+
+        </dd></dl>
+
+      <h3 class="heading settled" data-level="4.3" id="hand-seals"><span class="secno">4.3. </span><span class="content">Hand Seals</span><a class="self-link" href="#hand-seals"></a></h3>
+
+
+      <p>In addition to <a data-link-type="dfn" href="#talisman">talismans</a>,
+simpler battle magic can be wielded just by contorting the the fingers into runic forms
+and channeling magic directly.</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="hand-seal" title="hand seal">Hand seals<a class="self-link" href="#hand-seal"></a></dfn> are the \[Arcane] equivalent of unarmed attacks.
+They are not very strong, but they offer versatility in a pinch.</p>
+
+
+      <p>A <a data-link-type="dfn" href="#hand-seal">hand seal</a> counts as an Unarmed Light weapon,
+dealing 1d4 20/x2 damage
+in both melee and ranged combat,
+and are opposed by Defense.
+A <a data-link-type="dfn" href="#hand-seal">hand seal</a> can,
+at the attacker’s discretion,
+deal any type of physical or <a data-link-type="dfn" href="#common">common energy</a> damage.</p>
+
+
+      <p>Using <a data-link-type="dfn" href="#hand-seal">hand seals</a> uses the same rules as using unarmed strikes.</p>
+
+
+      <p>Anyone with at least one point of \[Arcane] mastery,
+or with proficiency in at least one <a data-link-type="dfn" href="#talisman">talisman</a>,
+has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</p>
+
+
+      <details class="why">
+	
+        <summary>Design of hand seals</summary>
+
+
+        <p><a data-link-type="dfn" href="#talisman">Talismans</a> are all exotic weapons, on purpose—<wbr>it makes them more exclusive and special thematically,
+	and gives them a bit more power to work with mechanically.</p>
+
+
+        <p>But it makes sense that someone with basic magical training can throw splashes of energy around
+	without it being a well-developed battle spell or anything,
+	the equivalent of <a data-link-type="dfn" href="#cantrips">Cantrips</a>.
+	This is similar to the concept of Common weapons,
+	which anyone can wield without special training.</p>
+
+
+        <p>(The Martial category doesn’t add much here;
+	it represents weapons that are uncommon enough to require <em>some</em> training,
+	but common enough that most warriors can use them all.
+	That’s not interesting enough to be worth creating here.)</p>
+
+
+        <p>Now, Common weapons generally have 2 less "points" than Exotic weapons,
+	per the <a href="http://jackalmage.pbworks.com/w/page/6552473/WeaponConstruction">construction rules</a>.
+	That gives us 1 point to put into stats.
+	If we pretend that all possible battle spells exist
+	(that is, every possible choice of points in <a data-section="" href="#constructing-talismans">§4.1 Constructing Talismans</a>)
+	and that all mages have proficiency with all Common battle spells,
+	this gives people a *ton* of choices to make in battle:
+	they could potentially deal anywhere from 1d4–2d6 damage,
+	any of three crit stats,
+	etc.
+	However, we can simplify things with two simple design choices.</p>
+
+
+        <p>First, note that if every possible spell exists,
+	then for every choice of stats,
+	there’s both a melee (0 points) and ranged (0 points) version.
+	If you can swap between battle spells at will,
+	this negates the entire point of having the melee+ranged (1 point) option.
+	Well-designed systems shouldn’t allow such trivial and stupid cheesing,
+	so let’s assume that common battle spells *always* take melee+ranged.</p>
+
+
+        <p>This absorbs the 1 free construction point,
+	and wipes out most of the complexity.
+	With this in place,
+	we know the damage (1d4/1d6/1d8), crit (20/x2), and opposition (Defense) for common battle spells.
+	The damage type is undecided, and can be any phyisical or <a data-link-type="dfn" href="#common">common energy</a> type,
+	so let’s just say that users can decide on the fly.
+	This means that common battle magic basically ignores DR/ER
+	(as you can just choose the type that gets around the defenses),
+	but these spells are also quite weak,
+	so not really a big deal.</p>
+
+
+        <p>We’re still left with the handedness choice, though.
+	Thematically, we want these spells to be the sort of thing anyone can throw when they’re out of better options.
+	That implies that they shouldn’t require a physical focus
+	so they’re always available,
+	which means they should be unarmed strikes.
+	(Luckily, being an unarmed strike costs 0 points,
+	per the <a href="http://jackalmage.pbworks.com/w/page/6552473/WeaponConstruction">construction rules</a>.)
+	This fixes the handedness at Light,
+	fixing the damage at 1d4,
+	right in the "weak" category where we wanted it.
+	(Technically we could have <a href="http://jackalmage.pbworks.com/w/page/6552472/UnarmedCombatMethods">unarmed strikes with different handedness</a>,
+	but let’s ignore that for the moment.)</p>
+
+
+        <p>With that, we’ve eliminated all the complexity we were originally worried about.
+	Common battle spells have a single fixed value for most of their stats,
+	and the flexibility of damage type is an interesting quirk
+	that doesn’t actually complexify things.
+	(Most of the time everyone can assume you’re using "whatever type gets around the enemy’s defense".
+	When it does matter, you can feel clever making the right choice.)</p>
+</details>
+
+
+
+
+      <h2 class="heading settled" data-level="5" id="energy-types"><span class="secno">5. </span><span class="content">Appendix A: Energy Types</span><a class="self-link" href="#energy-types"></a></h2>
+
+
+      <p>In any game, magic introduces new ways of doing damage
+(or at least makes it easier to do them).
+The details of each type of damage vary from game to game
+and sometimes even by personal taste,
+so Ironcarnum sees no need to tie itself down to a particular set of magical damage types.
+Instead, it merely specifies that there are generally two types of magic <dfn data-dfn-type="dfn" data-noexport="" id="energy">energy<a class="self-link" href="#energy"></a></dfn>: common and exotic.</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="common" title="common|common energy|common damage">Common energy<a class="self-link" href="#common"></a></dfn> is designed into the system and are easily resistable.
+It is normal to see a monster with the ability to withstand common magic damage.
+This may also be caused by nonmagical sources;
+any damage that can be easily be done without magic
+and isn’t a physical damage type should be classified as common
+(fire is an obvious example).</p>
+
+
+      <p><dfn data-dfn-type="dfn" data-noexport="" id="exotic" title="exotic|exotic energy|exotic damage">Exotic energy<a class="self-link" href="#exotic"></a></dfn> is everything else.
+Any damage type that you would not typically see a monster with a defense against is likely exotic.
+For example, in D&amp;D some spells deal holy damage.
+There is no way to resist holy damage,
+so it would be classified as exotic.</p>
+
+
+      <p class="note" role="note">Note: All <a data-link-type="dfn" href="#energy">energy</a> damage bypasses the DR of armor.</p>
+
+
+      <p>Exactly which damage types are common and exotic
+should be defined by your campaign world,
+not by your magic system.
+The two damage types work slightly differently in some spells;
+the exact mechanical differences are spelled out when important,
+but usually it’s simply that common damage types have one effect,
+and exotic damage types have a similar but weaker effect.</p>
+
+
+      <p>Your common damage types should be defined from the beginning,
+and based on the sort of defenses that monsters will typically have.
+Exotic damage types can be anything, though;
+let your players go crazy defining just how their mysterious spell works.
+It doesn’t matter whether they strike someone down with darkness, earth, psionic power, or even love--
+it’s all handled the same in Ironcarnum.</p>
+
+
+      <p class="note" role="note">Note: If you are using D&amp;D resources in your Iron Heroes game,
+it is probably easiest to declare the common damage types as
+fire, cold, electricity, sonic, and acid.
+This matches up with the Energy Resistances that the monsters in your material may have.
+In an Arcana Evolved product, add wind, water, and earth as common damage types.</p>
+
+
+      <h2 class="heading settled" data-level="6" id="dice-progression"><span class="secno">6. </span><span class="content">Appendix B: Dice Progression</span><a class="self-link" href="#dice-progression"></a></h2>
+
+
+      <p>Some spells increase the number of dice you roll,
+which can be easily extended indefinitely.
+Others, however, increase the size of the die that is rolled,
+which cannot easily be extended past the d12.
+This chart is designed to easily disambiguate non-standard die sizes.</p>
+
+
+      <p class="note" role="note">Note: This is purposely distinct from the damage increases that weapons receive as they get larger.
+That progresses geometrically, which has merit based on the way the game works.
+These rules, however, are designed to scale linearly (1 point increase for nearly every step),
+and should be used for all die size increases unless stated otherwise.</p>
+
+
+      <p>The standard progression of damage types is as follows:</p>
+
+
+      <p>0(constant) ⇨ 1(constant) ⇨ d2 ⇨ d4 ⇨ d6 ⇨ d8 ⇨ d10 ⇨ d12 ⇨ d6+d8</p>
+
+
+      <p class="note" role="note">Note: In some rules a d3 or d5 may appear.
+This die is treated as if it were between the d2 and d4, or d4 and d6.
+No die will ever <em>become</em> a d3 or d5 if it did not start out as one, though.</p>
+
+
+      <p>As the standard progression "loops" back on itself in the last step,
+it can be extended indefinitely.
+Simply upgrade the lowest die by one step according to the standard progression.</p>
+
+
+      <div class="example">
+	The following is an example of extending the standard progression.
+
+
+        <p>d6+d8 ⇨ 2d8 ⇨ d8+d10 ⇨ 2d10 ⇨ d10+d12 ⇨ 2d12 ⇨ d6+d8+d12 ⇨ …</p>
+</div>
+
+</main>
+
+    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
+Conformance</span><a class="self-link" href="#conformance"></a></h2>
+
+    
+    <p>
+        Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
+        The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
+        in the normative parts of this document
+        are to be interpreted as described in RFC 2119.
+        However, for readability,
+        these words do not appear in all uppercase letters in this specification.
+
+    </p>
+    <p>
+        All of the text of this specification is normative
+        except sections explicitly marked as non-normative, examples, and notes. <a data-biblio-type="normative" data-link-type="biblio" href="#biblio-rfc2119" title="RFC2119">[RFC2119]</a>
+
+    </p>
+    <p>
+        Examples in this specification are introduced with the words “for example”
+        or are set apart from the normative text with <code>class="example"</code>, like this:
+
+    </p>
+    <div class="example">
+        This is an example of an informative example.
+    </div>
+
+    
+    <p>
+        Informative notes begin with the word “Note”
+        and are set apart from the normative text with <code>class="note"</code>, like this:
+
+    </p>
+    <p class="note" role="note">
+        Note, this is an informative note.
+
+
+
+</p>
+    <h2 class="no-num heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+    <h3 class="no-num heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+    <dl>
+      <dt id="biblio-rfc2119" title="rfc2119"><a class="self-link" href="#biblio-rfc2119"></a>[rfc2119]</dt>
+      <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd>
+    </dl>
+    <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+    <ul class="indexlist">
+      <li>Battlemagic, <a href="#battlemagic" title="section 2.2">2.2</a></li>
+      <li>Cantrips, <a href="#cantrips" title="section 2.2">2.2</a></li>
+      <li>common, <a href="#common" title="section 5">5</a></li>
+      <li>common damage, <a href="#common" title="section 5">5</a></li>
+      <li>common energy, <a href="#common" title="section 5">5</a></li>
+      <li>Dran’rak, <a href="#dranrak" title="section 4.2">4.2</a></li>
+      <li>energy, <a href="#energy" title="section 5">5</a></li>
+      <li>exotic, <a href="#exotic" title="section 5">5</a></li>
+      <li>exotic damage, <a href="#exotic" title="section 5">5</a></li>
+      <li>exotic energy, <a href="#exotic" title="section 5">5</a></li>
+      <li>Giftmesser, <a href="#giftmesser" title="section 4.2">4.2</a></li>
+      <li>hand seal, <a href="#hand-seal" title="section 4.3">4.3</a></li>
+      <li>Mindlash, <a href="#mindlash" title="section 4.2">4.2</a></li>
+      <li>Prismatic Wand, <a href="#prismatic-wand" title="section 4.2">4.2</a></li>
+      <li>Scholars’s Sword, <a href="#scholarss-sword" title="section 4.2">4.2</a></li>
+      <li>Shard Cannon, <a href="#shard-cannon" title="section 4.2">4.2</a></li>
+      <li>Silken Blade, <a href="#silken-blade" title="section 4.2">4.2</a></li>
+      <li>Staff of Augustus, <a href="#staff-of-augustus" title="section 4.2">4.2</a></li>
+      <li>talisman, <a href="#talisman" title="section 4">4</a></li>
+      <li>True Magic, <a href="#true-magic" title="section 2.2">2.2</a></li>
+    </ul></body>
+</html>
