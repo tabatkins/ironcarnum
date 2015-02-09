@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
+ <head>
   
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   
-    <title>Ironcarnum, an Alternate Iron Heroes Magic System</title>
-    
   
-    <style>
+  <title>Ironcarnum, an Alternate Iron Heroes Magic System</title>
+  
+  
+  <style>
 @media print {
   html { margin: 0 !important; }
   body { font-family: serif; }
@@ -547,111 +547,114 @@ span.issue, span.note {
   border-right-style: solid;
 }
   </style>
-    
-
-  </head>
   
 
-  <body class="h-entry">
+  <meta content="Bikeshed 1.0.0" name="generator">
+ </head>
+ 
 
-    <div class="head">
+ <body class="h-entry">
+
+  <div class="head">
   
-      <p data-fill-with="logo"></p>
+   <p data-fill-with="logo"></p>
   
-      <h1 class="p-name no-ref" id="title">Ironcarnum, an Alternate Iron Heroes Magic System</h1>
+   <h1 class="p-name no-ref" id="title">Ironcarnum, an Alternate Iron Heroes Magic System</h1>
   
-      <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
-    <time class="dt-updated" datetime="2015-01-25">25 January 2015</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
+    <time class="dt-updated" datetime="2015-02-09">9 February 2015</time></span></h2>
   
-      <div data-fill-with="spec-metadata">
-        <dl>
-          <dt>This version:</dt>
-          <dd><a class="u-url" href="https://tabatkins.github.io/ironcarnum/">https://tabatkins.github.io/ironcarnum/</a></dd>
-          <dt class="editor">Editor:</dt>
-          <dd class="editor">
-            <div class="p-author h-card vcard"><a class="p-name fn u-url url" href="http://xanthir.com">Tab Atkins Jr</a> <a class="u-email email" href="mailto:jackalmage@gmail.com">jackalmage@gmail.com</a></div>
-          </dd>
-        </dl>
-      </div>
+   <div data-fill-with="spec-metadata">
+    <dl>
+     <dt>This version:
+     <dd><a class="u-url" href="https://tabatkins.github.io/ironcarnum/">https://tabatkins.github.io/ironcarnum/</a>
+     <dt>Issue Tracking:
+     <dd><a href="#issues-index">Inline In Spec</a>
+     <dt class="editor">Editor:
+     <dd class="editor">
+      <div class="p-author h-card vcard"><a class="p-name fn u-url url" href="http://xanthir.com">Tab Atkins Jr</a> <a class="u-email email" href="mailto:jackalmage@gmail.com">jackalmage@gmail.com</a></div>
+    </dl>
+   </div>
   
-      <div data-fill-with="warning"></div>
+   <div data-fill-with="warning"></div>
   
-      <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
+   <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 25 January 2015,
+In addition, as of 9 February 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document.
 </p>
   
-      <hr title="Separator for header">
+   <hr title="Separator for header">
 </div>
 
 
-    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+  <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
 
-    <div class="p-summary" data-fill-with="abstract">
-      <p>The Ironcarnum magic system is an alternate magic system for the Iron Heroes RPG, which is entirely feat-driven and mechanically integrated into the rest of the IH ruleset, so that any character can dabble or specialize in magic.</p>
+  <div class="p-summary" data-fill-with="abstract">
+   <p>The Ironcarnum magic system is an alternate magic system for the Iron Heroes RPG, which is entirely feat-driven and mechanically integrated into the rest of the IH ruleset, so that any character can dabble or specialize in magic.</p>
 
 </div>
 
-    <div data-fill-with="at-risk"></div>
+  <div data-fill-with="at-risk"></div>
 
 
-    <h2 class="no-num no-toc no-ref heading settled" id="contents"><span class="content">Table of Contents</span></h2>
+  <h2 class="no-num no-toc no-ref heading settled" id="contents"><span class="content">Table of Contents</span></h2>
 
-    <div data-fill-with="table-of-contents" role="navigation">
-      <ul class="toc" role="directory">
-        <li><a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
-          <ul class="toc">
-            <li><a href="#design-philosophy"><span class="secno">1.1</span> <span class="content">Design Philosophy</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#using-ironcarnum"><span class="secno">2</span> <span class="content">Using Ironcarnum</span></a>
-          <ul class="toc">
-            <li><a href="#other-alterations"><span class="secno">2.1</span> <span class="content">Other Alterations</span></a></li>
-            <li><a href="#magic-in-your-world"><span class="secno">2.2</span> <span class="content">Magic in your World</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#general-rules"><span class="secno">3</span> <span class="content">General Rules</span></a>
-          <ul class="toc">
-            <li><a href="#learning-arcana"><span class="secno">3.1</span> <span class="content">Learning Arcana</span></a></li>
-            <li><a href="#using-arcana"><span class="secno">3.2</span> <span class="content">Using Arcana</span></a></li>
-            <li><a href="#focusing-ladening"><span class="secno">3.3</span> <span class="content">Focusing and Ladening spells</span></a></li>
-            <li><a href="#arcana-in-combat"><span class="secno">3.4</span> <span class="content">Arcana In Combat</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#talismans"><span class="secno">4</span> <span class="content">Talismans</span></a>
-          <ul class="toc">
-            <li><a href="#constructing-talismans"><span class="secno">4.1</span> <span class="content">Constructing Talismans</span></a></li>
-            <li><a href="#example-talismans"><span class="secno">4.2</span> <span class="content">Example Talismans</span></a></li>
-            <li><a href="#hand-seals"><span class="secno">4.3</span> <span class="content">Hand Seals</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#energy-types"><span class="secno">5</span> <span class="content">Appendix A: Energy Types</span></a></li>
-        <li><a href="#dice-progression"><span class="secno">6</span> <span class="content">Appendix B: Dice Progression</span></a></li>
-        <li><a href="#durations"><span class="secno">7</span> <span class="content">Appendix C: Duration</span></a></li>
-        <li><a href="#exertion-levels"><span class="secno">8</span> <span class="content">Appendix D: Exertion Levels</span></a></li>
-        <li><a href="#conformance"><span class="secno"></span> <span class="content">
-Conformance</span></a></li>
-        <li><a href="#references"><span class="secno"></span> <span class="content">References</span></a>
-          <ul class="toc">
-            <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#index"><span class="secno"></span> <span class="content">Index</span></a></li>
-      </ul></div>
+  <div data-fill-with="table-of-contents" role="navigation">
+   <ul class="toc" role="directory">
+    <li><a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
+     <ul class="toc">
+      <li><a href="#design-philosophy"><span class="secno">1.1</span> <span class="content">Design Philosophy</span></a>
+     </ul>
+    <li><a href="#using-ironcarnum"><span class="secno">2</span> <span class="content">Using Ironcarnum</span></a>
+     <ul class="toc">
+      <li><a href="#other-alterations"><span class="secno">2.1</span> <span class="content">Other Alterations</span></a>
+      <li><a href="#magic-in-your-world"><span class="secno">2.2</span> <span class="content">Magic in your World</span></a>
+     </ul>
+    <li><a href="#general-rules"><span class="secno">3</span> <span class="content">General Rules</span></a>
+     <ul class="toc">
+      <li><a href="#learning-arcana"><span class="secno">3.1</span> <span class="content">Learning Arcana</span></a>
+      <li><a href="#using-arcana"><span class="secno">3.2</span> <span class="content">Using Arcana</span></a>
+      <li><a href="#focusing-ladening"><span class="secno">3.3</span> <span class="content">Focusing and Ladening spells</span></a>
+      <li><a href="#arcana-in-combat"><span class="secno">3.4</span> <span class="content">Arcana In Combat</span></a>
+     </ul>
+    <li><a href="#talismans"><span class="secno">4</span> <span class="content">Talismans</span></a>
+     <ul class="toc">
+      <li><a href="#constructing-talismans"><span class="secno">4.1</span> <span class="content">Constructing Talismans</span></a>
+      <li><a href="#example-talismans"><span class="secno">4.2</span> <span class="content">Example Talismans</span></a>
+      <li><a href="#hand-seals"><span class="secno">4.3</span> <span class="content">Hand Seals</span></a>
+     </ul>
+    <li><a href="#arcane-feats"><span class="secno">5</span> <span class="content">[Arcane] Feats</span></a>
+     <ul class="toc">
+      <li><a href="#aegis-mastery"><span class="secno">5.1</span> <span class="content"><span>Aegis</span> [Arcane]</span></a>
+      <li><a href="#battlespell-mastery-mastery"><span class="secno">5.2</span> <span class="content"><span>Battlespell Mastery</span> [Arcana]</span></a>
+     </ul>
+    <li><a href="#energy-types"><span class="secno">6</span> <span class="content">Appendix A: Energy Types</span></a>
+    <li><a href="#dice-progression"><span class="secno">7</span> <span class="content">Appendix B: Dice Progression</span></a>
+    <li><a href="#durations"><span class="secno">8</span> <span class="content">Appendix C: Duration</span></a>
+    <li><a href="#exertion-levels"><span class="secno">9</span> <span class="content">Appendix D: Exertion Levels</span></a>
+    <li><a href="#conformance"><span class="secno"></span> <span class="content">
+Conformance</span></a>
+    <li><a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+     <ul class="toc">
+      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+     </ul>
+    <li><a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
+   </ul></div>
 
-    <main>
-
-
-
-      <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+  <main>
 
 
-      <blockquote>
+
+   <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+
+
+   <blockquote>
 	“You are not your magic weapon and armor.
 	You are not your spell buffs.
 	You are not how much gold you have,
@@ -663,7 +666,7 @@ Conformance</span></a></li>
 </blockquote>
 
 
-      <p><a href="http://en.wikipedia.org/wiki/Iron_Heroes">Iron Heroes</a> is a D20-system RPG,
+   <p><a href="http://en.wikipedia.org/wiki/Iron_Heroes">Iron Heroes</a> is a D20-system RPG,
 descended from D&amp;D 3.5,
 which focuses almost entirely on <em>martial</em> prowess and personal abilities,
 rather than the spellcaster-dominated and magic item-driven gameplay typical of D&amp;D.
@@ -675,7 +678,7 @@ and mechanically <em>completely separate</em> from the entire rest of the game�
 nothing but the core notion of "damage" and "rolls" is shared between it and the rest of the game.</p>
 
 
-      <p>Ironcarnum is an alternate magic system for Iron Heroes,
+   <p>Ironcarnum is an alternate magic system for Iron Heroes,
 with no relation to the default one.
 It is almost entirely composed of Feat Masteries,
 like most abilities in Iron Heroes,
@@ -684,10 +687,10 @@ It introduces a new class, the <a data-link-type="dfn">Arcanist</a>, who special
 but characters are not required to take this class to use magic.</p>
 
 
-      <h3 class="heading settled" data-level="1.1" id="design-philosophy"><span class="secno">1.1. </span><span class="content">Design Philosophy</span><a class="self-link" href="#design-philosophy"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="design-philosophy"><span class="secno">1.1. </span><span class="content">Design Philosophy</span><a class="self-link" href="#design-philosophy"></a></h3>
 
 
-      <p>Ironcarnum is a magic system designed with very specific goals in mind.
+   <p>Ironcarnum is a magic system designed with very specific goals in mind.
 First, create a magic system that is equally useful to any class,
 and not limited to a single class.
 Second, integrate the magic system into the existing rules as much as possible,
@@ -698,7 +701,7 @@ Finally, make sure that magic is simple, flexible, and fun,
 just like the rest of Iron Heroes.</p>
 
 
-      <p>In order to do this,
+   <p>In order to do this,
 I’ve decided that the best form for a magic system to take is simply that of a new Mastery category.
 This allows me to avoid creating new basic structural mechanics;
 instead, I can rely on the excellent feat mastery system
@@ -710,7 +713,7 @@ As well, it provides a basic balance level to follow,
 so overall balancing of the system is much less difficult.</p>
 
 
-      <p>In addition, I have broken with D&amp;D tradition in several places
+   <p>In addition, I have broken with D&amp;D tradition in several places
 so that I can use existing mechanics as much as possible.
 By doing this, I ensure that someone can start using Ironcarnum at any level
 and immediately apply the full force of their existing levels,
@@ -728,20 +731,20 @@ that you can use to cast additional spells.
 This allows me to avoid further unnecessary duplication of mechanics.</p>
 
 
-      <p>All of these changes may seem radical at first,
+   <p>All of these changes may seem radical at first,
 but I believe they are ultimately for the best.
 Read up on the system, check out the rules,
 and skim the feat descriptions.</p>
 
 
-      <p>I think you’ll be pleasantly surprised.</p>
+   <p>I think you’ll be pleasantly surprised.</p>
 
 
 
-      <h2 class="heading settled" data-level="2" id="using-ironcarnum"><span class="secno">2. </span><span class="content">Using Ironcarnum</span><a class="self-link" href="#using-ironcarnum"></a></h2>
+   <h2 class="heading settled" data-level="2" id="using-ironcarnum"><span class="secno">2. </span><span class="content">Using Ironcarnum</span><a class="self-link" href="#using-ironcarnum"></a></h2>
 
 
-      <p>Many readers have contacted me saying that,
+   <p>Many readers have contacted me saying that,
 while they like Ironcarnum,
 they can’t see it fitting into their game.
 A bit of exploration reveals the problem--
@@ -751,30 +754,27 @@ allowing Ironcarnum to be integrated into virtually any game with any flavor.
 I present to you several possible approaches that one may use to integrate Ironcarnum into their game.</p>
 
 
-      <dl>
-        <dt data-md="">
-          <p>The Liberal Approach (the default)</p>
-          
+   <dl>
+    <dt data-md="">
+     <p>The Liberal Approach (the default)</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Magic is a skill like any other,
+    <dd data-md="">
+     <p>Magic is a skill like any other,
 merely something that must be learned.
 <a data-link-type="dfn" href="#true-magic">True Magic</a> requires dedicating your life to study,
 but most adventurers pick up the knack for <a data-link-type="dfn" href="#battlemagic">battlemagic</a> during their travels.
 As such, everyone gets access to the Arcane group and can cast spells
 (though for most people, this falls under the Other category, and so will never be too strong).</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>The Middle Approach</p>
-          
+    <dt data-md="">
+     <p>The Middle Approach</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Every person has a spark of magic within them that grows naturally with their strength,
+    <dd data-md="">
+     <p>Every person has a spark of magic within them that grows naturally with their strength,
 but they must be introduced to it before they may begin to wield the power eldritch.
 All classes gain access to the Arcane category,
 but they must take at least one level of Arcanist
@@ -783,44 +783,40 @@ Here, the Arcanist class acts as a gatekeeper,
 allowing you to restrict access to magic
 (by restricting access to the class)
 but still follow the assumption of level-appropriate power that Ironcarnum is built on.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>The Conservative Approach</p>
-          
+    <dt data-md="">
+     <p>The Conservative Approach</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Magic is a study that one must dedicate their life to.
+    <dd data-md="">
+     <p>Magic is a study that one must dedicate their life to.
 Though any adventurer <em>could</em> learn magic,
 it requires them to spend much personal effort to do so;
 there is little place for a dabbler in the world.
 Only the Arcanist class gains access to the Arcane category--
 other classes will never be able to cast spells,
 and levels in other classes do not increase your skill with magic.</p>
-          
+     
+
+</dl>
+
+   <h3 class="heading settled" data-level="2.1" id="other-alterations"><span class="secno">2.1. </span><span class="content">Other Alterations</span><a class="self-link" href="#other-alterations"></a></h3>
 
 
-        </dd></dl>
-
-      <h3 class="heading settled" data-level="2.1" id="other-alterations"><span class="secno">2.1. </span><span class="content">Other Alterations</span><a class="self-link" href="#other-alterations"></a></h3>
-
-
-      <p>Ironcarnum may be easily modified in many other ways to suit your game
+   <p>Ironcarnum may be easily modified in many other ways to suit your game
 beyond the simple question of access.
 Here are but a few:</p>
 
 
-      <dl>
-        <dt data-md="">
-          <p>Specific Paths</p>
-          
+   <dl>
+    <dt data-md="">
+     <p>Specific Paths</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Rather than allowing a character to choose a mental stat to use as their <a data-link-type="dfn">Source</a>
+    <dd data-md="">
+     <p>Rather than allowing a character to choose a mental stat to use as their <a data-link-type="dfn">Source</a>
 (adding to attack and damage with <a data-link-type="dfn" href="#talisman">talismans</a>,
 and occasionally playing a part in other spells),
 select a specific mental stat that must be employed.
@@ -831,43 +827,40 @@ Different spellcasters naturally sort into disciplines based on their mental abi
 it is a rare prodigy that can wield all forms of magic well.
 One may be even more selective with this if one wishes,
 and say that <em>only</em> a specific stat is for magic (say, Int).</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>Magic is Corrupting</p>
-          
+    <dt data-md="">
+     <p>Magic is Corrupting</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Whenever a character ladens a spell,
+    <dd data-md="">
+     <p>Whenever a character ladens a spell,
 they must resist or fall under the sway of arcane corruption.
 I cannot recommend Jeremy Puckett’s Arcane Corruption rules enough.
 Actually employing the effects of Corruption and Taint require a little bit of work,
 but can be ported easily enough,
 as the ruleset was specifically designed to be generic.</p>
-          
+     
+
+</dl>
+
+   <h3 class="heading settled" data-level="2.2" id="magic-in-your-world"><span class="secno">2.2. </span><span class="content">Magic in your World</span><a class="self-link" href="#magic-in-your-world"></a></h3>
 
 
-        </dd></dl>
-
-      <h3 class="heading settled" data-level="2.2" id="magic-in-your-world"><span class="secno">2.2. </span><span class="content">Magic in your World</span><a class="self-link" href="#magic-in-your-world"></a></h3>
-
-
-      <p>Ironcarnum is designed with specific assumptions about how it fits into a world.
+   <p>Ironcarnum is designed with specific assumptions about how it fits into a world.
 I have outlined several ways to change how Ironcarnum works
 to make it easier to adapt these rules into your own world.
 The more you know about my hidden assumptions, though, the better,
 so this section will outline the specific niche I see Ironcarnum as filling.</p>
 
 
-      <p>Essentially, I divide magic into three categories of use,
+   <p>Essentially, I divide magic into three categories of use,
 based on relative power and how much they affect the world.
 I call these categories <a data-link-type="dfn" href="#cantrips">Cantrips</a>, <a data-link-type="dfn" href="#battlemagic">Battlemagic</a>, and <a data-link-type="dfn" href="#true-magic">True Magic</a>.</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="cantrips">Cantrips<a class="self-link" href="#cantrips"></a></dfn> are magical effects that are utterly insignificant in effect.
+   <p><dfn data-dfn-type="dfn" data-noexport="" id="cantrips">Cantrips<a class="self-link" href="#cantrips"></a></dfn> are magical effects that are utterly insignificant in effect.
 Allowing these into the world doesn’t change a thing except a bit of flavor.
 Who cares if people can light candles with their mind,
 or float small objects that are just beyond arm’s length?
@@ -884,7 +877,7 @@ If they are proficient with one based on telekinesis,
 they can float items around.</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="battlemagic">Battlemagic<a class="self-link" href="#battlemagic"></a></dfn> is effects that are powerful enough to warrant restriction,
+   <p><dfn data-dfn-type="dfn" data-noexport="" id="battlemagic">Battlemagic<a class="self-link" href="#battlemagic"></a></dfn> is effects that are powerful enough to warrant restriction,
 but not powerful enough to change the world.
 In other words, just right to be handled by a ruleset.
 This is where Ironcarnum lies.
@@ -894,7 +887,7 @@ and defending against dragonfire are all battlemagic-level effects.
 The effects of battlemagic should be small in both extent and duration.</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="true-magic">True Magic<a class="self-link" href="#true-magic"></a></dfn> is the stuff of legend,
+   <p><dfn data-dfn-type="dfn" data-noexport="" id="true-magic">True Magic<a class="self-link" href="#true-magic"></a></dfn> is the stuff of legend,
 magic that stories are centered on.
 This category covers spells that are permanent, long-lasting,
 or otherwise not well-suited to be balanced by action costs.
@@ -912,7 +905,7 @@ and even from area to area within a world.</p>
 
 
 
-      <p>I do not believe I am doing anything radical in making this division.
+   <p>I do not believe I am doing anything radical in making this division.
 D&amp;D does precisely this with everything <em>but</em> magic.
 Wielding a fork during dinner is too simple to cover with rules,
 while building a bridge is too complex to be accurately modelled,
@@ -923,7 +916,7 @@ like combat and interpersonal relations,
 that are given actual detailed rules.</p>
 
 
-      <p>As soon as D&amp;D hits the magic chapter, though,
+   <p>As soon as D&amp;D hits the magic chapter, though,
 it throws all those principles out the window.
 Suddenly every possible use of magic must be covered by rules,
 and must be fit into the spell slot paradigm as well.
@@ -934,38 +927,38 @@ where rules are useful and simple.</p>
 
 
 
-      <h2 class="heading settled" data-level="3" id="general-rules"><span class="secno">3. </span><span class="content">General Rules</span><a class="self-link" href="#general-rules"></a></h2>
+   <h2 class="heading settled" data-level="3" id="general-rules"><span class="secno">3. </span><span class="content">General Rules</span><a class="self-link" href="#general-rules"></a></h2>
 
 
-      <h3 class="heading settled" data-level="3.1" id="learning-arcana"><span class="secno">3.1. </span><span class="content">Learning Arcana</span><a class="self-link" href="#learning-arcana"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="learning-arcana"><span class="secno">3.1. </span><span class="content">Learning Arcana</span><a class="self-link" href="#learning-arcana"></a></h3>
 
 
-      <p>New magical abilities are gained through [Arcane] feats.
+   <p>New magical abilities are gained through [Arcane] feats.
 The <a data-link-type="dfn">Arcanist</a> class provides additional options,
 allowing one to use magic better than other characters at the expense of other abilities.</p>
 
 
-      <h3 class="heading settled" data-level="3.2" id="using-arcana"><span class="secno">3.2. </span><span class="content">Using Arcana</span><a class="self-link" href="#using-arcana"></a></h3>
+   <h3 class="heading settled" data-level="3.2" id="using-arcana"><span class="secno">3.2. </span><span class="content">Using Arcana</span><a class="self-link" href="#using-arcana"></a></h3>
 
 
-      <p><a data-link-type="dfn" href="#talisman">Talismans</a> are arcane weapons
+   <p><a data-link-type="dfn" href="#talisman">Talismans</a> are arcane weapons
 used to channel offensive spells.
 Attacking with magic acts exactly like attacking with any other weapon:
 it uses attack actions, etc.
-See <a data-section="" href="#talismans">§4 Talismans</a> for further details on their rules and use.</p>
+See <a href="#talismans">§4 Talismans</a> for further details on their rules and use.</p>
 
 
-      <p>Personal spells are almost always continuous abilities,
+   <p>Personal spells are almost always continuous abilities,
 providing a benefit without any action required on your part.
 Some spells do require an action to use the spell or to gain additional benefits;
 if so, they will specify this in their description.
-See <a data-section="" href="#durations">§7 Appendix C: Duration</a> for further details.</p>
+See <a href="#durations">§8 Appendix C: Duration</a> for further details.</p>
 
 
-      <h3 class="heading settled" data-level="3.3" id="focusing-ladening"><span class="secno">3.3. </span><span class="content">Focusing and Ladening spells</span><a class="self-link" href="#focusing-ladening"></a></h3>
+   <h3 class="heading settled" data-level="3.3" id="focusing-ladening"><span class="secno">3.3. </span><span class="content">Focusing and Ladening spells</span><a class="self-link" href="#focusing-ladening"></a></h3>
 
 
-      <p>Practiced mages can focus their attention on particular spells,
+   <p>Practiced mages can focus their attention on particular spells,
 increasing the mana flow to them and thus their power.
 Many spells have <a data-link-type="dfn">Focus Options</a> given as part of their descriptions.
 These are special abilities that increase the strength of the spell or provide additional abilities.
@@ -975,7 +968,7 @@ Spending Focus tokens is not an action,
 and can be done at any time during your turn.</p>
 
 
-      <p>Mages can also temporarily surge their mana flow,
+   <p>Mages can also temporarily surge their mana flow,
 powering up a spell far beyond normal means at the cost of severely stressing their bodies.
 You can <a data-link-type="dfn">Overchannel</a> at any time
 to either gain more <a data-link-type="dfn">Focus</a> or to <a data-link-type="dfn">laden</a> a spell for a special high-powered effect.
@@ -984,10 +977,10 @@ and are unable to <a data-link-type="dfn">overchannel</a> again for several roun
 (though you can continue to cast ordinary spells).</p>
 
 
-      <h3 class="heading settled" data-level="3.4" id="arcana-in-combat"><span class="secno">3.4. </span><span class="content">Arcana In Combat</span><a class="self-link" href="#arcana-in-combat"></a></h3>
+   <h3 class="heading settled" data-level="3.4" id="arcana-in-combat"><span class="secno">3.4. </span><span class="content">Arcana In Combat</span><a class="self-link" href="#arcana-in-combat"></a></h3>
 
 
-      <p>You use arcana in combat as you would any other ability.
+   <p>You use arcana in combat as you would any other ability.
 Magic may allow you to bend the rules of the universe,
 but it doesn’t change the rules of the game.
 If there are any interactions that aren’t covered explicitly in this document,
@@ -995,10 +988,10 @@ assume that Ironcarnum magic is just another ability and adjudicate accordingly.
 
 
 
-      <h2 class="heading settled" data-level="4" id="talismans"><span class="secno">4. </span><span class="content">Talismans</span><a class="self-link" href="#talismans"></a></h2>
+   <h2 class="heading settled" data-level="4" id="talismans"><span class="secno">4. </span><span class="content">Talismans</span><a class="self-link" href="#talismans"></a></h2>
 
 
-      <blockquote>
+   <blockquote>
 	While entire treatises have been written on the subject,
 	the essential distinction between <i>Ars Magna</i> and <i>Ars Arcana</i>,
 	science and magic,
@@ -1008,7 +1001,7 @@ assume that Ironcarnum magic is just another ability and adjudicate accordingly.
 </blockquote>
 
 
-      <p>Magic is essentially the reshaping of meaning,
+   <p>Magic is essentially the reshaping of meaning,
 and mageduels can be compared to a debate.
 While using personal arcana is relatively easy,
 when you attempt to use arcana on an enemy
@@ -1017,7 +1010,7 @@ A powerful will can overcome their resistance,
 but using the proper tools to lend weight to your argument makes this task easier.</p>
 
 
-      <p>Talismans are items composed of materials that have powerful mystic resonances with certain concepts.
+   <p>Talismans are items composed of materials that have powerful mystic resonances with certain concepts.
 Rather than creating the spellform from scratch with every casting,
 a mage with a talisman may concentrate on simply projecting and strengthening
 the resonance already present in the talisman,
@@ -1026,48 +1019,45 @@ For example, wood ash is strongly associated with fire,
 and so may be integrated into a talisman meant to aid in fire spells.</p>
 
 
-      <p>A <dfn data-dfn-type="dfn" data-noexport="" id="talisman">talisman<a class="self-link" href="#talisman"></a></dfn> is an [Arcane] weapon,
+   <p>A <dfn data-dfn-type="dfn" data-noexport="" id="talisman">talisman<a class="self-link" href="#talisman"></a></dfn> is an [Arcane] weapon,
 used to channel offensive spells.
 Talismans act exactly like any other weapon,
 and are used the same way,
 with the following differences:</p>
 
 
-      <ul>
-        <li data-md="">
-          <p>They use a mage’s <a data-link-type="dfn">Source</a> to determine attack and damage bonuses,
+   <ul>
+    <li data-md="">
+     <p>They use a mage’s <a data-link-type="dfn">Source</a> to determine attack and damage bonuses,
 rather than Strength or Dexterity.</p>
-          
+     
 
-        </li>
-        <li data-md="">
-          <p>They are all Exotic weapons,
+    <li data-md="">
+     <p>They are all Exotic weapons,
 and can’t be used untrained unless the wielder has at least one point of [Arcane] mastery.</p>
-          
+     
 
-        </li>
-        <li data-md="">
-          <p>They may cause <a data-link-type="dfn" href="#energy">energy</a> damage, rather than physical, and may be opposed by a save, rather than Defense
+    <li data-md="">
+     <p>They may cause <a data-link-type="dfn" href="#energy">energy</a> damage, rather than physical, and may be opposed by a save, rather than Defense
 (depending on the talisman).</p>
-          
+     
 
-        </li>
-        <li data-md="">
-          <p>Talisman damage <em>is</em> affected by the handedness of the talisman,
+    <li data-md="">
+     <p>Talisman damage <em>is</em> affected by the handedness of the talisman,
 but <strong>not</strong> by its size.
 A <a data-link-type="dfn" href="#prismatic-wand">Prismatic Wand</a> sized for a Tiny pixie
 and one sized for a Huge ogre
 both do the same amount of damage.</p>
-          
+     
 
 
-          <details class="why">
+     <details class="why">
 	
-            <summary>Why does handedness affect damage, but not size?</summary>
+      <summary>Why does handedness affect damage, but not size?</summary>
 	For flavor, and mechanical consistency with magic in other systems.
 
 
-            <p>Allowing handedness to affect damage increases the variety of talisman stats,
+      <p>Allowing handedness to affect damage increases the variety of talisman stats,
 	which is a good thing,
 	and makes it play better with weapon rules,
 	some of which depend on 1H or 2H weapon use.
@@ -1075,34 +1065,33 @@ both do the same amount of damage.</p>
 	and means that big flashy wizard staffs are more powerful than handheld wands.</p>
 
 
-            <p>On the other hand,
+      <p>On the other hand,
 	magic has always been the preferred weapon of the tiny,
 	because its damage doesn’t scale with body size.
 	Maintaining that invariant with talismans preserves the right flavor.</p>
 </details>
-          
+     
+</ul>
 
-        </li></ul>
-
-      <p>Any feat that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well,
+   <p>Any feat that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well,
 such as Two-Weapon Fighting, Whirlwind Attack, or Weapon Focus.</p>
 
 
-      <p class="note" role="note">Note: Talismans never have [Power] or [Finesse] descriptors
-(though see <a data-link-type="dfn">Battlespell Mastery</a>),
+   <p class="note" role="note">Note: Talismans never have [Power] or [Finesse] descriptors
+(though see <a data-link-type="dfn" href="#battlespell-mastery">Battlespell Mastery</a>),
 which does limit what kinds of feats can be used with <a data-link-type="dfn" href="#talisman">talismans</a>.
 Similarly, though, some feats defined in this document
 require the use of an [Arcane] weapon,
 and so can’t be used with normal weapons.</p>
 
 
-      <p>Similarly, any other rules that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well:
+   <p>Similarly, any other rules that applies to weapons applies to <a data-link-type="dfn" href="#talisman">talismans</a> as well:
 you count as armed while wielding a <a data-link-type="dfn" href="#talisman">talisman</a> you’re proficient with;
 melee <a data-link-type="dfn" href="#talisman">talismans</a> threaten an area around themselves
 and can be used to take attacks of opportunity, etc.</p>
 
 
-      <p>If a <a data-link-type="dfn" href="#talisman">talisman</a> is opposed by a save, rather than Defense,
+   <p>If a <a data-link-type="dfn" href="#talisman">talisman</a> is opposed by a save, rather than Defense,
 the attack roll is made first;
 a natural 20 or natural 1 is an automatic hit or miss, as normal.
 Otherwise, the result of the attack roll sets the DC for the target’s save,
@@ -1114,165 +1103,150 @@ then roll the save with a DC equal to the attack’s result,
 with a failed save meaning the critical is confirmed.</p>
 
 
+   <p>Merely being proficient with a <a data-link-type="dfn" href="#talisman">talisman</a> sometimes grants benefits,
+even if you don’t have the <a data-link-type="dfn" href="#talisman">talisman</a> in hand.
+For example, <a data-link-type="dfn" href="#battlespell-mastery">Battlespell Mastery</a> lets you treat other <a data-link-type="dfn" href="#talisman">talismans</a>
+as if they were one you were proficient with,
+and <a data-link-type="dfn" href="#aegis-em5">Aegis EM5</a> infuses your armor with a <a data-link-type="dfn" href="#talisman">talisman</a> you’re proficient with,
+letting you make counter-attacks with it.</p>
 
-      <h3 class="heading settled" data-level="4.1" id="constructing-talismans"><span class="secno">4.1. </span><span class="content">Constructing Talismans</span><a class="self-link" href="#constructing-talismans"></a></h3>
 
 
-      <p><a data-link-type="dfn" href="#talisman">Talismans</a> should have as much variety in construction as normal weapons,
+   <h3 class="heading settled" data-level="4.1" id="constructing-talismans"><span class="secno">4.1. </span><span class="content">Constructing Talismans</span><a class="self-link" href="#constructing-talismans"></a></h3>
+
+
+   <p><a data-link-type="dfn" href="#talisman">Talismans</a> should have as much variety in construction as normal weapons,
 but rather than create another boring table of dry statistics,
 all the diversity can be boiled down into a simple construction process.</p>
 
 
-      <p>To construct a <a data-link-type="dfn" href="#talisman">talisman</a>,
+   <p>To construct a <a data-link-type="dfn" href="#talisman">talisman</a>,
 make one choice from each of the five categories in the table below.
 The total point cost of your choices
 (shown in parentheses by each choice)
 must equal 3.</p>
 
 
-      <dl>
-        <dt data-md="">
-          <p>Damage (Light/1H/2H)</p>
-          
+   <dl>
+    <dt data-md="">
+     <p>Damage (Light/1H/2H)</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>(0) 1d4 / 1d6 / 1d10</p>
-          
+    <dd data-md="">
+     <p>(0) 1d4 / 1d6 / 1d10</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) 1d6 / 1d8 / 2d6</p>
-          
+    <dd data-md="">
+     <p>(1) 1d6 / 1d8 / 2d6</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(2) 1d8 / 1d10 / 2d8</p>
-          
+    <dd data-md="">
+     <p>(2) 1d8 / 1d10 / 2d8</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(3) 1d10 / 1d12 / 3d6</p>
-          
+    <dd data-md="">
+     <p>(3) 1d10 / 1d12 / 3d6</p>
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>Critical</p>
-          
+    <dt data-md="">
+     <p>Critical</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>(0) 20/x2</p>
-          
+    <dd data-md="">
+     <p>(0) 20/x2</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) 19-20/x2</p>
-          
+    <dd data-md="">
+     <p>(1) 19-20/x2</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) 20/x3</p>
-          
+    <dd data-md="">
+     <p>(1) 20/x3</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(2) 18-20/x2</p>
-          
+    <dd data-md="">
+     <p>(2) 18-20/x2</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(2) 20/x4</p>
-          
+    <dd data-md="">
+     <p>(2) 20/x4</p>
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>Range</p>
-          
+    <dt data-md="">
+     <p>Range</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>(0) Melee only</p>
-          
+    <dd data-md="">
+     <p>(0) Melee only</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(0) Ranged only (50' range increment)</p>
-          
+    <dd data-md="">
+     <p>(0) Ranged only (50' range increment)</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) Melee and ranged (30' range increment)</p>
-          
+    <dd data-md="">
+     <p>(1) Melee and ranged (30' range increment)</p>
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>Damage Type</p>
-          
+    <dt data-md="">
+     <p>Damage Type</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>(0) Physical (Select Bludgeoning, Slashing, or Piercing; DR applies)</p>
-          
+    <dd data-md="">
+     <p>(0) Physical (Select Bludgeoning, Slashing, or Piercing; DR applies)</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(0) <a data-link-type="dfn" href="#common">Common Energy</a> (Energy Resistance applies)</p>
-          
+    <dd data-md="">
+     <p>(0) <a data-link-type="dfn" href="#common">Common Energy</a> (Energy Resistance applies)</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) <a data-link-type="dfn" href="#exotic">Exotic Energy</a></p>
-          
+    <dd data-md="">
+     <p>(1) <a data-link-type="dfn" href="#exotic">Exotic Energy</a></p>
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p>Opposed By</p>
-          
+    <dt data-md="">
+     <p>Opposed By</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>(0) Defense</p>
-          
+    <dd data-md="">
+     <p>(0) Defense</p>
+     
 
-        </dd>
-        <dd data-md="">
-          <p>(1) Saving Throw (Select Fortitude, Reflex, or Will)</p>
-          
+    <dd data-md="">
+     <p>(1) Saving Throw (Select Fortitude, Reflex, or Will)</p>
+     
+</dl>
 
-        </dd></dl>
-
-      <p>All <a data-link-type="dfn" href="#talisman">talismans</a> have the [Arcane] descriptor.</p>
+   <p>All <a data-link-type="dfn" href="#talisman">talismans</a> have the [Arcane] descriptor.</p>
 
 
-      <p class="note" role="note">Note: In addition to the stats decided on here,
-<a data-link-type="dfn" href="#talisman">talismans</a> get an additional ability for proficient wielders who take EM 3 of <a data-link-type="dfn">Battlespell Mastery</a>.
+   <p class="note" role="note">Note: In addition to the stats decided on here,
+<a data-link-type="dfn" href="#talisman">talismans</a> get an additional ability for proficient wielders who take EM 3 of <a data-link-type="dfn" href="#battlespell-mastery">Battlespell Mastery</a>.
 Players should work with their DMs to decide on a flavorful, interesting, and appropriately powered ability.
-The talismans presented in <a data-section="" href="#example-talismans">§4.2 Example Talismans</a> give a number of examples
+The talismans presented in <a href="#example-talismans">§4.2 Example Talismans</a> give a number of examples
 to use as guidance.</p>
 
 
 
-      <h3 class="heading settled" data-level="4.2" id="example-talismans"><span class="secno">4.2. </span><span class="content">Example Talismans</span><a class="self-link" href="#example-talismans"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="example-talismans"><span class="secno">4.2. </span><span class="content">Example Talismans</span><a class="self-link" href="#example-talismans"></a></h3>
 
 
-      <p>These are fully-constructed battlespells for instruction and inspiration.
+   <p>These are fully-constructed battlespells for instruction and inspiration.
 The listings include the full mechanics,
-as well as the special ability given by <a data-link-type="dfn">Battlespell Mastery</a> EM 3.</p>
+as well as the special ability given by <a data-link-type="dfn" href="#battlespell-mastery">Battlespell Mastery</a> EM 3.</p>
 
 
-      <dl>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="dranrak">Dran’rak<a class="self-link" href="#dranrak"></a></dfn></p>
-          
+   <dl>
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="dranrak">Dran’rak<a class="self-link" href="#dranrak"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>This <a data-link-type="dfn" href="#talisman">talisman</a> is used by the Wolves of Aarkun,
+    <dd data-md="">
+     <p>This <a data-link-type="dfn" href="#talisman">talisman</a> is used by the Wolves of Aarkun,
 a knightly order of telekinetic warriors.
 It is composed of a whirling storm of heavy metal spheres,
 telekinetically animated.
@@ -1280,50 +1254,44 @@ It is a Light weapon that deals 1d8 20/x2 Bludgeoning damage in both melee and r
 and is opposed by Defense.
 EM3 gives them the control to add blades to their armament,
 changing the damage type to Bludgeoning AND Slashing AND Piercing.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="silken-blade">Silken Blade<a class="self-link" href="#silken-blade"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="silken-blade">Silken Blade<a class="self-link" href="#silken-blade"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>An order of courtesan ninjas who run their intrigues in the courts of Keria use this <a data-link-type="dfn" href="#talisman">talisman</a>.
+    <dd data-md="">
+     <p>An order of courtesan ninjas who run their intrigues in the courts of Keria use this <a data-link-type="dfn" href="#talisman">talisman</a>.
 The silken sleeves of their robes, when charged with arcane power,
 gain rigid cutting edges.
 It is a Light weapon that deals 1d6 19-20/x2 Slashing damage in melee,
 and is opposed by Reflex.
 EM3 makes the silk flow again, making it a Tripping and Disarming weapon.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="giftmesser">Giftmesser<a class="self-link" href="#giftmesser"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="giftmesser">Giftmesser<a class="self-link" href="#giftmesser"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Rarely seen in combat, the Giftmesser is a dark creation of the Ancients,
+    <dd data-md="">
+     <p>Rarely seen in combat, the Giftmesser is a dark creation of the Ancients,
 a genegineered insect which burrows into the wielder’s wrist and exposes its stinger.
 It is a Light weapon which deals 1d4 20/x2 Poison (<a data-link-type="dfn" href="#exotic">exotic</a>) damage in melee,
 and is opposed by Fort.
 EM3 makes it even deadlier:
 the <a data-link-type="dfn" href="#talisman">talisman</a> is treated as a Dagger,
 and deals 1 Con damage on a critical hit.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="mindlash">Mindlash<a class="self-link" href="#mindlash"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="mindlash">Mindlash<a class="self-link" href="#mindlash"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Thought long to be extinct,
+    <dd data-md="">
+     <p>Thought long to be extinct,
 the psionic blood of the Emperor Of Man recently resurfaced among the people of Sudoyon.
 For people with the right gift, a simple cat-eye stone, held in the hand,
 lets them focus punishing psychic power on their enemies.
@@ -1331,34 +1299,30 @@ It is a Light weapon that does 1d6 20/x2 Piercing damage in both melee and range
 and is opposed by Will.
 EM3 heightens the psychic assault:
 on a critical hit, the target is Stunned for a round.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="prismatic-wand">Prismatic Wand<a class="self-link" href="#prismatic-wand"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="prismatic-wand">Prismatic Wand<a class="self-link" href="#prismatic-wand"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>A common <a data-link-type="dfn" href="#talisman">talisman</a> among the highmages of lost Kyklos,
+    <dd data-md="">
+     <p>A common <a data-link-type="dfn" href="#talisman">talisman</a> among the highmages of lost Kyklos,
 the Prismatic Wand can serve almost any purpose for a gifted wielder.
 It is a 1H weapon that deals 1d8 20/x3 Fire damage in long-range combat,
 and is opposed by Reflex.
 EM3 is where it acquires its name;
 as a standard action,
 the caster can change the damage type to any other common energy.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="scholarss-sword">Scholars’s Sword<a class="self-link" href="#scholarss-sword"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="scholarss-sword">Scholars’s Sword<a class="self-link" href="#scholarss-sword"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>A few runes on a training sword produce this ubiquitous <a data-link-type="dfn" href="#talisman">talisman</a>,
+    <dd data-md="">
+     <p>A few runes on a training sword produce this ubiquitous <a data-link-type="dfn" href="#talisman">talisman</a>,
 often seen in warcamps to let the scribes and other “intellectuals” with minor arcane training
 defend themselves in case the camp is overrun.
 It almost wields itself!
@@ -1370,17 +1334,15 @@ dealing 1d8 damage to anyone who passes through the square
 and counting as partial cover
 as long as the command-giver maintains Concentration and line of sight,
 and for three rounds afterward.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="shard-cannon">Shard Cannon<a class="self-link" href="#shard-cannon"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="shard-cannon">Shard Cannon<a class="self-link" href="#shard-cannon"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>The gearheads of Aarkan love tinkering,
+    <dd data-md="">
+     <p>The gearheads of Aarkan love tinkering,
 especially when they can ground their magic in reality enough
 for their inventions to work outside of their labs.
 The Shard Cannon <a data-link-type="dfn" href="#talisman">talisman</a> uses high-energy refrigeration technology
@@ -1391,41 +1353,38 @@ and is opposed by Defense.
 EM3 has the refrigeration process tweaked
 to create shards which explode on impact into a hail of subzero material:
 on a critical hit, the Shard Cannon deals an additional 4d8 points of Cold damage.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="staff-of-augustus">Staff of Augustus<a class="self-link" href="#staff-of-augustus"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="staff-of-augustus">Staff of Augustus<a class="self-link" href="#staff-of-augustus"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>The Augustinian Conclave consecrates these holy staves as ceremonial instruments for any temple leaders.
+    <dd data-md="">
+     <p>The Augustinian Conclave consecrates these holy staves as ceremonial instruments for any temple leaders.
 In a pinch, though, they function as powerful <a data-link-type="dfn" href="#talisman">talismans</a>,
 particularly good at warding off demons.
 It is a 2H weapon that deals 1d10 Holy (<a data-link-type="dfn" href="#exotic">exotic</a>) damage in both melee and ranged combat,
 and is opposed by Will.
 EM 3 gives it the power to banish evil:
 every time a demon is damaged by the weapon it is pushed 20' away from the wielder.</p>
-          
+     
+
+</dl>
+
+   <h3 class="heading settled" data-level="4.3" id="hand-seals"><span class="secno">4.3. </span><span class="content">Hand Seals</span><a class="self-link" href="#hand-seals"></a></h3>
 
 
-        </dd></dl>
-
-      <h3 class="heading settled" data-level="4.3" id="hand-seals"><span class="secno">4.3. </span><span class="content">Hand Seals</span><a class="self-link" href="#hand-seals"></a></h3>
-
-
-      <p>In addition to <a data-link-type="dfn" href="#talisman">talismans</a>,
+   <p>In addition to <a data-link-type="dfn" href="#talisman">talismans</a>,
 simpler battle magic can be wielded just by contorting the the fingers into runic forms
 and channeling magic directly.</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="hand-seal" title="hand seal">Hand seals<a class="self-link" href="#hand-seal"></a></dfn> are the [Arcane] equivalent of unarmed attacks.
+   <p><dfn data-dfn-type="dfn" data-lt="hand seal" data-noexport="" id="hand-seal">Hand seals<a class="self-link" href="#hand-seal"></a></dfn> are the [Arcane] equivalent of unarmed attacks.
 They are not very strong, but they offer versatility in a pinch.</p>
 
 
-      <p>A <a data-link-type="dfn" href="#hand-seal">hand seal</a> counts as an Unarmed Light weapon,
+   <p>A <a data-link-type="dfn" href="#hand-seal">hand seal</a> counts as an Unarmed Light weapon,
 dealing 1d4 20/x2 damage
 in both melee and ranged combat,
 and are opposed by Defense.
@@ -1434,41 +1393,41 @@ at the attacker’s discretion,
 deal any type of physical or <a data-link-type="dfn" href="#common">common energy</a> damage.</p>
 
 
-      <p>Using <a data-link-type="dfn" href="#hand-seal">hand seals</a> uses the same rules as using unarmed strikes.</p>
+   <p>Using <a data-link-type="dfn" href="#hand-seal">hand seals</a> uses the same rules as using unarmed strikes.</p>
 
 
-      <p>Anyone with at least one point of [Arcane] mastery,
+   <p>Anyone with at least one point of [Arcane] mastery,
 or with proficiency in at least one <a data-link-type="dfn" href="#talisman">talisman</a>,
 has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</p>
 
 
-      <details class="why">
+   <details class="why">
 	
-        <summary>Design of hand seals</summary>
+    <summary>Design of hand seals</summary>
 
 
-        <p><a data-link-type="dfn" href="#talisman">Talismans</a> are all exotic weapons, on purpose—<wbr>it makes them more exclusive and special thematically,
+    <p><a data-link-type="dfn" href="#talisman">Talismans</a> are all exotic weapons, on purpose—<wbr>it makes them more exclusive and special thematically,
 	and gives them a bit more power to work with mechanically.</p>
 
 
-        <p>But it makes sense that someone with basic magical training can throw splashes of energy around
+    <p>But it makes sense that someone with basic magical training can throw splashes of energy around
 	without it being a well-developed battle spell or anything,
 	the equivalent of <a data-link-type="dfn" href="#cantrips">Cantrips</a>.
 	This is similar to the concept of Common weapons,
 	which anyone can wield without special training.</p>
 
 
-        <p>(The Martial category doesn’t add much here;
+    <p>(The Martial category doesn’t add much here;
 	it represents weapons that are uncommon enough to require <em>some</em> training,
 	but common enough that most warriors can use them all.
 	That’s not interesting enough to be worth creating here.)</p>
 
 
-        <p>Now, Common weapons generally have 2 less "points" than Exotic weapons,
+    <p>Now, Common weapons generally have 2 less "points" than Exotic weapons,
 	per the <a href="http://jackalmage.pbworks.com/w/page/6552473/WeaponConstruction">construction rules</a>.
 	That gives us 1 point to put into stats.
 	If we pretend that all possible battle spells exist
-	(that is, every possible choice of points in <a data-section="" href="#constructing-talismans">§4.1 Constructing Talismans</a>)
+	(that is, every possible choice of points in <a href="#constructing-talismans">§4.1 Constructing Talismans</a>)
 	and that all mages have proficiency with all Common battle spells,
 	this gives people a *ton* of choices to make in battle:
 	they could potentially deal anywhere from 1d4–2d6 damage,
@@ -1477,7 +1436,7 @@ has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</
 	However, we can simplify things with two simple design choices.</p>
 
 
-        <p>First, note that if every possible spell exists,
+    <p>First, note that if every possible spell exists,
 	then for every choice of stats,
 	there’s both a melee (0 points) and ranged (0 points) version.
 	If you can swap between battle spells at will,
@@ -1486,7 +1445,7 @@ has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</
 	so let’s assume that common battle spells *always* take melee+ranged.</p>
 
 
-        <p>This absorbs the 1 free construction point,
+    <p>This absorbs the 1 free construction point,
 	and wipes out most of the complexity.
 	With this in place,
 	we know the damage (1d4/1d6/1d8), crit (20/x2), and opposition (Defense) for common battle spells.
@@ -1498,7 +1457,7 @@ has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</
 	so not really a big deal.</p>
 
 
-        <p>We’re still left with the handedness choice, though.
+    <p>We’re still left with the handedness choice, though.
 	Thematically, we want these spells to be the sort of thing anyone can throw when they’re out of better options.
 	That implies that they shouldn’t require a physical focus
 	so they’re always available,
@@ -1512,7 +1471,7 @@ has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</
 	but let’s ignore that for the moment.)</p>
 
 
-        <p>With that, we’ve eliminated all the complexity we were originally worried about.
+    <p>With that, we’ve eliminated all the complexity we were originally worried about.
 	Common battle spells have a single fixed value for most of their stats,
 	and the flexibility of damage type is an interesting quirk
 	that doesn’t actually complexify things.
@@ -1522,11 +1481,242 @@ has proficiency with <a data-link-type="dfn" href="#hand-seal">hand seals</a>.</
 
 
 
+   <h2 class="heading settled" data-level="5" id="arcane-feats"><span class="secno">5. </span><span class="content">[Arcane] Feats</span><a class="self-link" href="#arcane-feats"></a></h2>
 
-      <h2 class="heading settled" data-level="5" id="energy-types"><span class="secno">5. </span><span class="content">Appendix A: Energy Types</span><a class="self-link" href="#energy-types"></a></h2>
+
+   <p>[Arcane] feats constitute the "affects yourself" side of Ironcarnum,
+as opposed to the "affects others" side represented by <a data-link-type="dfn" href="#talisman">talismans</a>.
+They’re also the bulk of the complexity of the magic system.</p>
 
 
-      <p>In any game, magic introduces new ways of doing damage
+   <p>[Arcane] feats use the Arcane mastery category.
+No class, except the <a data-link-type="dfn">Arcanist</a>,
+has the Arcane category specifically listed,
+so it falls under the "Other" category in their stat blocks.
+The Man-at-Arms may choose Arcane as one of his major or minor categories,
+and a Weapon Master may take Arcane as his primary mastery.</p>
+
+
+   <p>Some [Arcane] feats have <a data-link-type="dfn">focus options</a>,
+which let you power up the base effect by spending <a data-link-type="dfn">focus tokens</a>.
+See <a href="#focus-options"></a> for a description of how those work.</p>
+
+
+   <h3 class="heading settled" data-level="5.1" id="aegis-mastery"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-noexport="" id="aegis">Aegis<a class="self-link" href="#aegis"></a></dfn> [Arcane]</span><a class="self-link" href="#aegis-mastery"></a></h3>
+
+
+   <p>Melding your talent with your natural defensive instinct,
+you fashion a ward to deflect blows.</p>
+
+
+   <dl>
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM1|Aegis BM" data-noexport="" id="aegis-em1">Base Mastery 1<a class="self-link" href="#aegis-em1"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>You conjure a magical shield that can deflect physical blades or blows.
+You gain a constant 1d2 DR which counts as light armor.
+It overlaps (does not stack) with ordinary armor,
+and is bypassed by anything that bypasses armor DR.
+This armor has no Max Dex bonus or Armor Check Penalty.</p>
+     
+
+
+     <dl>
+      <dt data-md="">
+       <p>Focus Options</p>
+       
+
+      <dd data-md="">
+       <p>+2 Focus: Increase the die size of your armor by 1 step.</p>
+       
+</dl>
+     
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM3" data-noexport="" id="aegis-em3">Expanded Mastery 3<a class="self-link" href="#aegis-em3"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>You infuse greater power into your aegis,
+giving it the ability to withstand virtually anything.
+<a data-link-type="dfn" href="#common">Common energy</a> damage no longer bypasses your DR.</p>
+     
+
+
+     <dl>
+      <dt data-md="">
+       <p>Focus Options</p>
+       
+
+      <dd data-md="">
+       <p>+1 Focus: Choose a single <a data-link-type="dfn" href="#common">common energy</a> type.
+You gain a +4 bonus to DR rolls when defending against that type.
+This ability may be bought multiple times for different energies--
+each one is counted separately for determining when you exceed your Focus limit.</p>
+       
+
+      <dd data-md="">
+       <p>1 Focus: Choose a single <a data-link-type="dfn" href="#exotic">exotic energy</a> type.
+You may apply half your DR roll to any attacks that deal the chosen energy damage.</p>
+       
+</dl>
+     
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM4" data-noexport="" id="aegis-em4">Expanded Mastery 4<a class="self-link" href="#aegis-em4"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>Your armor grows in power,
+able to effortlessly deflect more powerful attacks.
+The base DR value granted by the Base Mastery increases by one die step permanently.</p>
+     
+
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM5" data-noexport="" id="aegis-em5">Expanded Mastery 5<a class="self-link" href="#aegis-em5"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>Prereq: You must be proficient with at least one <a data-link-type="dfn" href="#talisman">talisman</a>.</p>
+     
+
+
+     <p>You channel destructive power into your shields,
+and woe to those who cross your defensive line.
+Choose a single <a data-link-type="dfn" href="#talisman">talisman</a> you are proficient with.
+Anytime a foe strikes you with a melee attack
+and your DR granted by the base feat successfully negates some of the damage,
+you may immediately make a single melee attack against them
+as if you were wielding that <a data-link-type="dfn" href="#talisman">talisman</a>.
+This uses one of your attacks of opportunity for the round.
+You may change the <a data-link-type="dfn" href="#talisman">talisman</a> used in this feat at the beginning of your turn.</p>
+     
+
+
+     <p class="issue" id="issue-d55aa896"><a class="self-link" href="#issue-d55aa896"></a>Is the base damage okay, or should I treat the talisman as Light for this purpose?
+As stated, it means that learning a 2H talisman,
+even if you don’t use it for anything else,
+would be useful.</p>
+     
+
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM6" data-noexport="" id="aegis-em6">Expanded Mastery 6<a class="self-link" href="#aegis-em6"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>You learn to channel your swirling defensive field
+into a physical interdiction between yourself and the enemy.
+As a swift action, you may select a single edge of your current space.
+You gain low cover against attacks that cross that edge.
+As a move action, you gain low cover on all four edges of your current space.</p>
+     
+
+
+     <p>In either option the cover granted does *not* move, even if you do.
+Low cover grants a +4 defense bonus against melee and ranged attacks that cross it
+and are made within 30 feet.
+Cover interferes with attacks in either direction,
+but an attacker may ignore low cover is he is closer to it than his target is
+(that is, the mage’s own attacks will typically ignore this cover).
+See IH pg184 for further details about Cover.</p>
+     
+
+
+     <dl>
+      <dt data-md="">
+       <p>Focus Options</p>
+       
+
+      <dd data-md="">
+       <p>+2 Focus: When you use a swift action to gain cover along a single edge of your space,
+you may select an additional edge to gain cover from.</p>
+       
+
+      <dd data-md="">
+       <p>5 Focus: The cover granted by this feat becomes total, rather than low.</p>
+       
+</dl>
+     
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM7" data-noexport="" id="aegis-em7">Expanded Mastery 7<a class="self-link" href="#aegis-em7"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>You can channel a vast amount of energy to erect an impenetrable barrier against your foes.
+If you <a data-link-type="dfn">overchannel</a>,
+you seal off your square for one full round.
+No attacks will harm you,
+and you may not be targeted by any effect during this time.
+However, you may not move or interact with the outside world while within your shield.</p>
+     
+
+
+     <p>Note that the shield persists for one full round.
+If you use any actions during your turn before you activate this shield,
+you will have to spend those actions first when your next turn arrives,
+while the shield is still up,
+before getting to act normally with your remaining actions.</p>
+     
+
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Aegis EM8" data-noexport="" id="aegis-em8">Expanded Mastery 8<a class="self-link" href="#aegis-em8"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>Your armor becomes nigh-invulnerable,
+able to deflect the mightiest of blows.
+The base DR value granted by the Base Mastery increases by two steps permanently.</p>
+     
+
+</dl>
+
+   <h3 class="heading settled" data-level="5.2" id="battlespell-mastery-mastery"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-noexport="" id="battlespell-mastery">Battlespell Mastery<a class="self-link" href="#battlespell-mastery"></a></dfn> [Arcana]</span><a class="self-link" href="#battlespell-mastery-mastery"></a></h3>
+
+
+   <p>You specialize in battlespells, and can twist them to your will.</p>
+
+
+   <dl>
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Battlespell Mastery EM1|Battlespell Mastery BM" data-noexport="" id="battlespell-mastery-em1">Base Mastery 1<a class="self-link" href="#battlespell-mastery-em1"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>Prerequisite: Must be proficient with a <a data-link-type="dfn" href="#talisman">talisman</a>.</p>
+     
+
+
+     <p>Choose two weapon descriptors.
+All battlespells you cast may be treated as having those descriptors at your discretion.
+(Restriction: the two descriptors may not be Power and Finesse.
+You can choose Power or Finesse and an additional descriptor, but not both.)</p>
+     
+
+
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-lt="Battlespell Mastery EM3" data-noexport="" id="battlespell-mastery-em3">Expanded Mastery 3<a class="self-link" href="#battlespell-mastery-em3"></a></dfn></p>
+     
+
+    <dd data-md="">
+     <p>Choose up to 3 <a data-link-type="dfn" href="#talisman">talismans</a> you are proficient with.  You can cast these spells using any talisman with the same handedness or higher than what the spell expects.  (That is, a battlespell that is normally cast with a two-handed talisman can now be cast with any two-handed talisman, but cannot be cast with a One-handed or Light talisman.  On the other hand, a battlespell that is normally cast with a One-handed talisman can be cast with a one-handed or two-handed talisman, but not a Light talisman.)</p>
+     
+</dl>
+
+   <p>Expanded Mastery: 4
+You gain proficiency with all battlespells.  If you have already gained proficiency in exotic battlespells via Exotic Weapon Proficiency, you may choose an additional descriptor to add to those spells.</p>
+
+
+
+   <h2 class="heading settled" data-level="6" id="energy-types"><span class="secno">6. </span><span class="content">Appendix A: Energy Types</span><a class="self-link" href="#energy-types"></a></h2>
+
+
+   <p>In any game, magic introduces new ways of doing damage
 (or at least makes it easier to do them).
 The details of each type of damage vary from game to game
 and sometimes even by personal taste,
@@ -1534,7 +1724,7 @@ so Ironcarnum sees no need to tie itself down to a particular set of magical dam
 Instead, it merely specifies that there are generally two types of magic <dfn data-dfn-type="dfn" data-noexport="" id="energy">energy<a class="self-link" href="#energy"></a></dfn>: common and exotic.</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="common" title="common|common energy|common damage">Common energy<a class="self-link" href="#common"></a></dfn> is designed into the system and are easily resistable.
+   <p><dfn data-dfn-type="dfn" data-lt="common|common energy|common damage" data-noexport="" id="common">Common energy<a class="self-link" href="#common"></a></dfn> is designed into the system and are easily resistable.
 It is normal to see a monster with the ability to withstand common magic damage.
 This may also be caused by nonmagical sources;
 any damage that can be easily be done without magic
@@ -1542,17 +1732,17 @@ and isn’t a physical damage type should be classified as common
 (fire is an obvious example).</p>
 
 
-      <p><dfn data-dfn-type="dfn" data-noexport="" id="exotic" title="exotic|exotic energy|exotic damage">Exotic energy<a class="self-link" href="#exotic"></a></dfn> is everything else.
+   <p><dfn data-dfn-type="dfn" data-lt="exotic|exotic energy|exotic damage" data-noexport="" id="exotic">Exotic energy<a class="self-link" href="#exotic"></a></dfn> is everything else.
 Any damage type that you would not typically see a monster with a defense against is likely exotic.
 For example, in D&amp;D some spells deal holy damage.
 There is no way to resist holy damage,
 so it would be classified as exotic.</p>
 
 
-      <p class="note" role="note">Note: All <a data-link-type="dfn" href="#energy">energy</a> damage bypasses the DR of armor.</p>
+   <p class="note" role="note">Note: All <a data-link-type="dfn" href="#energy">energy</a> damage bypasses the DR of armor.</p>
 
 
-      <p>Exactly which damage types are common and exotic
+   <p>Exactly which damage types are common and exotic
 should be defined by your campaign world,
 not by your magic system.
 The two damage types work slightly differently in some spells;
@@ -1561,7 +1751,7 @@ but usually it’s simply that common damage types have one effect,
 and exotic damage types have a similar but weaker effect.</p>
 
 
-      <p>Your common damage types should be defined from the beginning,
+   <p>Your common damage types should be defined from the beginning,
 and based on the sort of defenses that monsters will typically have.
 Exotic damage types can be anything, though;
 let your players go crazy defining just how their mysterious spell works.
@@ -1569,58 +1759,58 @@ It doesn’t matter whether they strike someone down with darkness, earth, psion
 it’s all handled the same in Ironcarnum.</p>
 
 
-      <p class="note" role="note">Note: If you are using D&amp;D resources in your Iron Heroes game,
+   <p class="note" role="note">Note: If you are using D&amp;D resources in your Iron Heroes game,
 it is probably easiest to declare the common damage types as
 fire, cold, electricity, sonic, and acid.
 This matches up with the Energy Resistances that the monsters in your material may have.
 In an Arcana Evolved product, add wind, water, and earth as common damage types.</p>
 
 
-      <h2 class="heading settled" data-level="6" id="dice-progression"><span class="secno">6. </span><span class="content">Appendix B: Dice Progression</span><a class="self-link" href="#dice-progression"></a></h2>
+   <h2 class="heading settled" data-level="7" id="dice-progression"><span class="secno">7. </span><span class="content">Appendix B: Dice Progression</span><a class="self-link" href="#dice-progression"></a></h2>
 
 
-      <p>Some spells increase the number of dice you roll,
+   <p>Some spells increase the number of dice you roll,
 which can be easily extended indefinitely.
 Others, however, increase the size of the die that is rolled,
 which cannot easily be extended past the d12.
 This chart is designed to easily disambiguate non-standard die sizes.</p>
 
 
-      <p class="note" role="note">Note: This is purposely distinct from the damage increases that weapons receive as they get larger.
+   <p class="note" role="note">Note: This is purposely distinct from the damage increases that weapons receive as they get larger.
 That progresses geometrically, which has merit based on the way the game works.
 These rules, however, are designed to scale linearly (1 point increase for nearly every step),
 and should be used for all die size increases unless stated otherwise.</p>
 
 
-      <p>The standard progression of damage types is as follows:</p>
+   <p>The standard progression of damage types is as follows:</p>
 
 
-      <p>0(constant) ⇨ 1(constant) ⇨ d2 ⇨ d4 ⇨ d6 ⇨ d8 ⇨ d10 ⇨ d12 ⇨ d6+d8</p>
+   <p>0(constant) ⇨ 1(constant) ⇨ d2 ⇨ d4 ⇨ d6 ⇨ d8 ⇨ d10 ⇨ d12 ⇨ d6+d8</p>
 
 
-      <p class="note" role="note">Note: In some rules a d3 or d5 may appear.
+   <p class="note" role="note">Note: In some rules a d3 or d5 may appear.
 This die is treated as if it were between the d2 and d4, or d4 and d6.
 No die will ever <em>become</em> a d3 or d5 if it did not start out as one, though.</p>
 
 
-      <p>As the standard progression "loops" back on itself in the last step,
+   <p>As the standard progression "loops" back on itself in the last step,
 it can be extended indefinitely.
 Simply upgrade the lowest die by one step according to the standard progression.</p>
 
 
-      <div class="example">
+   <div class="example">
 	The following is an example of extending the standard progression.
 
 
-        <p>d6+d8 ⇨ 2d8 ⇨ d8+d10 ⇨ 2d10 ⇨ d10+d12 ⇨ 2d12 ⇨ d6+d8+d12 ⇨ …</p>
+    <p>d6+d8 ⇨ 2d8 ⇨ d8+d10 ⇨ 2d10 ⇨ d10+d12 ⇨ 2d12 ⇨ d6+d8+d12 ⇨ …</p>
 </div>
 
 
 
-      <h2 class="heading settled" data-level="7" id="durations"><span class="secno">7. </span><span class="content">Appendix C: Duration</span><a class="self-link" href="#durations"></a></h2>
+   <h2 class="heading settled" data-level="8" id="durations"><span class="secno">8. </span><span class="content">Appendix C: Duration</span><a class="self-link" href="#durations"></a></h2>
 
 
-      <p>Ironcarnum is a magic system designed for warriors,
+   <p>Ironcarnum is a magic system designed for warriors,
 and so the spells in it are designed to be maximally useful to warriors.
 One does not have to carefully shepherd their sword swings for fear of running out
 or count exactly how long their BAB will last in a day;
@@ -1629,7 +1819,7 @@ The spells are designed as innate abilities,
 summonable at will and for as long as desired.</p>
 
 
-      <p>As such, the vast majority of abilities in Ironcarnum are <u>Duration: Instant</u> or <u>Duration: Constant</u>.
+   <p>As such, the vast majority of abilities in Ironcarnum are <u>Duration: Instant</u> or <u>Duration: Constant</u>.
 This is the assumed default,
 and so is not listed in the feat description.
 You may use these spells as long and as often as you want.
@@ -1638,7 +1828,7 @@ Activating an Instant spell is an attack action unless otherwise noted.
 Activating or deactivating a Constant spell is a free action unless otherwise noted.</p>
 
 
-      <p>A small number of spells are more powerful than this, however,
+   <p>A small number of spells are more powerful than this, however,
 and require a measure of concentration to cast and maintain.
 This will be indicated by a <u>Duration: Short</u> line in the feat description.
 Short duration spells count as <a data-link-type="dfn" href="#heavy-exertion">Heavy Exertion</a>,
@@ -1649,7 +1839,7 @@ Activating a Short duration spell is a move action unless otherwise noted.
 <strong>You may only maintain a single Short duration spell at a time.</strong></p>
 
 
-      <p>Finally, some spells are of an appropriate power level for constant use in battle,
+   <p>Finally, some spells are of an appropriate power level for constant use in battle,
 but may be thematically inappropriate for truly constant use
 when you consider their effects on the world at large.
 These spells are designated with a <u>Duration: Long</u> line in the feat description.
@@ -1660,85 +1850,77 @@ if they feel that the spell would not significantly disrupt their world.</p>
 
 
 
-      <h2 class="heading settled" data-level="8" id="exertion-levels"><span class="secno">8. </span><span class="content">Appendix D: Exertion Levels</span><a class="self-link" href="#exertion-levels"></a></h2>
+   <h2 class="heading settled" data-level="9" id="exertion-levels"><span class="secno">9. </span><span class="content">Appendix D: Exertion Levels</span><a class="self-link" href="#exertion-levels"></a></h2>
 
 
-      <p>The rules for <dfn data-dfn-type="dfn" data-noexport="" id="exertion">exertion<a class="self-link" href="#exertion"></a></dfn> abstract the notion of performing acts
+   <p>The rules for <dfn data-dfn-type="dfn" data-noexport="" id="exertion">exertion<a class="self-link" href="#exertion"></a></dfn> abstract the notion of performing acts
 that are difficult to maintain for long periods.
 All acts fall into one of the following categories:</p>
 
 
-      <dl>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="minimal-exertion">Minimal Exertion<a class="self-link" href="#minimal-exertion"></a></dfn> (the default)</p>
-          
+   <dl>
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="minimal-exertion">Minimal Exertion<a class="self-link" href="#minimal-exertion"></a></dfn> (the default)</p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>Unless otherwise noted,
+    <dd data-md="">
+     <p>Unless otherwise noted,
 all actions count as <a data-link-type="dfn" href="#minimal-exertion">Minimal Exertion</a>.
 You can maintain <a data-link-type="dfn" href="#minimal-exertion">minimal exertion</a> indefinitely.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="light-exertion">Light Exertion<a class="self-link" href="#light-exertion"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="light-exertion">Light Exertion<a class="self-link" href="#light-exertion"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>You can easily maintain light exertion for up to 8 hours a day.
+    <dd data-md="">
+     <p>You can easily maintain light exertion for up to 8 hours a day.
 For each additional hour you lightly exert yourself,
 you must make a Constitution check (DC 10, +2 per extra hour).
 If the check fails, the character takes 1d6 points of nonlethal damage.
 A character who takes any nonlethal damage from this becomes fatigued.
 Eliminating the nonlethal damage also eliminates the fatigue.
 It’s possible for a character to work themself unconsciousness by pushing himself too hard.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="moderate-exertion">Moderate Exertion<a class="self-link" href="#moderate-exertion"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="moderate-exertion">Moderate Exertion<a class="self-link" href="#moderate-exertion"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>You can easily maintain moderate exertion for up to an hour.
+    <dd data-md="">
+     <p>You can easily maintain moderate exertion for up to an hour.
 The second hour of moderate exertion in a day deals 1 nonlethal damage,
 and each additional hour deals double the previous hour’s damage.
 A character who takes any nonlethal damage from this becomes fatigued.
 Eliminating the nonlethal damage also eliminates the fatigue.</p>
-          
+     
 
 
-        </dd>
-        <dt data-md="">
-          <p><dfn data-dfn-type="dfn" data-noexport="" id="heavy-exertion">Heavy Exertion<a class="self-link" href="#heavy-exertion"></a></dfn></p>
-          
+    <dt data-md="">
+     <p><dfn data-dfn-type="dfn" data-noexport="" id="heavy-exertion">Heavy Exertion<a class="self-link" href="#heavy-exertion"></a></dfn></p>
+     
 
-        </dt>
-        <dd data-md="">
-          <p>You can only maintain heavy exertion
+    <dd data-md="">
+     <p>You can only maintain heavy exertion
 for a number of continuous rounds equal to your Constitution score
 before having to rest for an equal amount of time.
 You suffer nonlethal damage similar to <a data-link-type="dfn" href="#moderate-exertion">Moderate Exertion</a> for continuing past your normal limits,
 except that the relevant unit of time is a number of rounds equal to your Constitution score,
 rather than an hour.
 Attempting to act and rest in cycles is treated as <a data-link-type="dfn" href="#moderate-exertion">Moderate Exertion</a>.</p>
-          
+     
+</dl>
 
-        </dd></dl>
-
-      <p>You can combine multiple actions that count as different levels of exertion without any special penalty.
+   <p>You can combine multiple actions that count as different levels of exertion without any special penalty.
 You are simply treated as undertaking the highest level of exhaustion.
 For example, you can do a dozen things that count as Light Exertion at the same time for hours
 without having to worry about damage,
 but if you add a single Moderate Exertion task you are treated as moderately exerting yourself.</p>
 
 
-      <p>As well, all uses of exhausting acts stack for purposes of tracking exertion limits.
+   <p>As well, all uses of exhausting acts stack for purposes of tracking exertion limits.
 If you do a moderately exhausting task for half an hour,
 break for a while,
 then take up a different moderately exhausting task,
@@ -1748,11 +1930,11 @@ before you begin to take damage
 
 </main>
 
-    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
+  <h2 class="no-ref no-num heading settled" id="conformance"><span class="content">
 Conformance</span><a class="self-link" href="#conformance"></a></h2>
 
     
-    <p>
+  <p>
         Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
         The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
         in the normative parts of this document
@@ -1761,64 +1943,84 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
         these words do not appear in all uppercase letters in this specification.
 
     </p>
-    <p>
+  <p>
         All of the text of this specification is normative
-        except sections explicitly marked as non-normative, examples, and notes. <a data-biblio-type="normative" data-link-type="biblio" href="#biblio-rfc2119" title="RFC2119">[RFC2119]</a>
+        except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a>
 
     </p>
-    <p>
+  <p>
         Examples in this specification are introduced with the words “for example”
         or are set apart from the normative text with <code>class="example"</code>, like this:
 
     </p>
-    <div class="example">
+  <div class="example">
         This is an example of an informative example.
     </div>
 
     
-    <p>
+  <p>
         Informative notes begin with the word “Note”
         and are set apart from the normative text with <code>class="note"</code>, like this:
 
     </p>
-    <p class="note" role="note">
+  <p class="note" role="note">
         Note, this is an informative note.
 
 
 
 </p>
-    <h2 class="no-num heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-    <h3 class="no-num heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-    <dl>
-      <dt id="biblio-rfc2119" title="rfc2119"><a class="self-link" href="#biblio-rfc2119"></a>[rfc2119]</dt>
-      <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd>
-    </dl>
-    <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-    <ul class="indexlist">
-      <li>Battlemagic, <a href="#battlemagic" title="section 2.2">2.2</a></li>
-      <li>Cantrips, <a href="#cantrips" title="section 2.2">2.2</a></li>
-      <li>common, <a href="#common" title="section 5">5</a></li>
-      <li>common damage, <a href="#common" title="section 5">5</a></li>
-      <li>common energy, <a href="#common" title="section 5">5</a></li>
-      <li>Dran’rak, <a href="#dranrak" title="section 4.2">4.2</a></li>
-      <li>energy, <a href="#energy" title="section 5">5</a></li>
-      <li>exertion, <a href="#exertion" title="section 8">8</a></li>
-      <li>exotic, <a href="#exotic" title="section 5">5</a></li>
-      <li>exotic damage, <a href="#exotic" title="section 5">5</a></li>
-      <li>exotic energy, <a href="#exotic" title="section 5">5</a></li>
-      <li>Giftmesser, <a href="#giftmesser" title="section 4.2">4.2</a></li>
-      <li>hand seal, <a href="#hand-seal" title="section 4.3">4.3</a></li>
-      <li>Heavy Exertion, <a href="#heavy-exertion" title="section 8">8</a></li>
-      <li>Light Exertion, <a href="#light-exertion" title="section 8">8</a></li>
-      <li>Mindlash, <a href="#mindlash" title="section 4.2">4.2</a></li>
-      <li>Minimal Exertion, <a href="#minimal-exertion" title="section 8">8</a></li>
-      <li>Moderate Exertion, <a href="#moderate-exertion" title="section 8">8</a></li>
-      <li>Prismatic Wand, <a href="#prismatic-wand" title="section 4.2">4.2</a></li>
-      <li>Scholars’s Sword, <a href="#scholarss-sword" title="section 4.2">4.2</a></li>
-      <li>Shard Cannon, <a href="#shard-cannon" title="section 4.2">4.2</a></li>
-      <li>Silken Blade, <a href="#silken-blade" title="section 4.2">4.2</a></li>
-      <li>Staff of Augustus, <a href="#staff-of-augustus" title="section 4.2">4.2</a></li>
-      <li>talisman, <a href="#talisman" title="section 4">4</a></li>
-      <li>True Magic, <a href="#true-magic" title="section 2.2">2.2</a></li>
-    </ul></body>
+  <h2 class="no-num heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="no-num heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <dl>
+   <dt id="biblio-rfc2119"><a class="self-link" href="#biblio-rfc2119"></a>[rfc2119]
+   <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+  </dl>
+  <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <ul class="indexlist">
+   <li>Aegis, <a href="#aegis">5.1</a>
+   <li>Aegis BM, <a href="#aegis-em1">5.1</a>
+   <li>Aegis EM1, <a href="#aegis-em1">5.1</a>
+   <li>Aegis EM3, <a href="#aegis-em3">5.1</a>
+   <li>Aegis EM4, <a href="#aegis-em4">5.1</a>
+   <li>Aegis EM5, <a href="#aegis-em5">5.1</a>
+   <li>Aegis EM6, <a href="#aegis-em6">5.1</a>
+   <li>Aegis EM7, <a href="#aegis-em7">5.1</a>
+   <li>Aegis EM8, <a href="#aegis-em8">5.1</a>
+   <li>Battlemagic, <a href="#battlemagic">2.2</a>
+   <li>Battlespell Mastery, <a href="#battlespell-mastery">5.2</a>
+   <li>Battlespell Mastery BM, <a href="#battlespell-mastery-em1">5.2</a>
+   <li>Battlespell Mastery EM1, <a href="#battlespell-mastery-em1">5.2</a>
+   <li>Battlespell Mastery EM3, <a href="#battlespell-mastery-em3">5.2</a>
+   <li>Cantrips, <a href="#cantrips">2.2</a>
+   <li>common, <a href="#common">6</a>
+   <li>common damage, <a href="#common">6</a>
+   <li>common energy, <a href="#common">6</a>
+   <li>Dran’rak, <a href="#dranrak">4.2</a>
+   <li>energy, <a href="#energy">6</a>
+   <li>exertion, <a href="#exertion">9</a>
+   <li>exotic, <a href="#exotic">6</a>
+   <li>exotic damage, <a href="#exotic">6</a>
+   <li>exotic energy, <a href="#exotic">6</a>
+   <li>Giftmesser, <a href="#giftmesser">4.2</a>
+   <li>hand seal, <a href="#hand-seal">4.3</a>
+   <li>Heavy Exertion, <a href="#heavy-exertion">9</a>
+   <li>Light Exertion, <a href="#light-exertion">9</a>
+   <li>Mindlash, <a href="#mindlash">4.2</a>
+   <li>Minimal Exertion, <a href="#minimal-exertion">9</a>
+   <li>Moderate Exertion, <a href="#moderate-exertion">9</a>
+   <li>Prismatic Wand, <a href="#prismatic-wand">4.2</a>
+   <li>Scholars’s Sword, <a href="#scholarss-sword">4.2</a>
+   <li>Shard Cannon, <a href="#shard-cannon">4.2</a>
+   <li>Silken Blade, <a href="#silken-blade">4.2</a>
+   <li>Staff of Augustus, <a href="#staff-of-augustus">4.2</a>
+   <li>talisman, <a href="#talisman">4</a>
+   <li>True Magic, <a href="#true-magic">2.2</a>
+  </ul>
+  <h2 class="no-num heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+  <div style="counter-reset:issue">
+   <div class="issue">Is the base damage okay, or should I treat the talisman as Light for this purpose?
+As stated, it means that learning a 2H talisman,
+even if you don’t use it for anything else,
+would be useful.<a href="#issue-d55aa896"> ↵ </a></div>
+  </div></body>
 </html>

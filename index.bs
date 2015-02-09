@@ -532,7 +532,7 @@ In addition to <a>talismans</a>,
 simpler battle magic can be wielded just by contorting the the fingers into runic forms
 and channeling magic directly.
 
-<dfn title="hand seal">Hand seals</dfn> are the [Arcane] equivalent of unarmed attacks.
+<dfn lt="hand seal">Hand seals</dfn> are the [Arcane] equivalent of unarmed attacks.
 They are not very strong, but they offer versatility in a pinch.
 
 A <a>hand seal</a> counts as an Unarmed Light weapon,
@@ -644,7 +644,7 @@ See [[#focus-options]] for a description of how those work.
 Melding your talent with your natural defensive instinct,
 you fashion a ward to deflect blows.
 
-: <dfn title="Aegis EM1|Aegis BM">Base Mastery 1</dfn>
+: <dfn lt="Aegis EM1|Aegis BM">Base Mastery 1</dfn>
 :: You conjure a magical shield that can deflect physical blades or blows.
 	You gain a constant 1d2 DR which counts as light armor.
 	It overlaps (does not stack) with ordinary armor,
@@ -654,7 +654,7 @@ you fashion a ward to deflect blows.
 	: Focus Options
 	:: +2 Focus: Increase the die size of your armor by 1 step.
 
-: <dfn title="Aegis EM3">Expanded Mastery 3</dfn>
+: <dfn lt="Aegis EM3">Expanded Mastery 3</dfn>
 :: You infuse greater power into your aegis,
 	giving it the ability to withstand virtually anything.
 	<a>Common energy</a> damage no longer bypasses your DR.
@@ -667,12 +667,12 @@ you fashion a ward to deflect blows.
 	:: 1 Focus: Choose a single <a>exotic energy</a> type.
 		You may apply half your DR roll to any attacks that deal the chosen energy damage.
 
-: <dfn title="Aegis EM4">Expanded Mastery 4</dfn>
+: <dfn lt="Aegis EM4">Expanded Mastery 4</dfn>
 :: Your armor grows in power,
 	able to effortlessly deflect more powerful attacks.
 	The base DR value granted by the Base Mastery increases by one die step permanently.
 
-: <dfn title="Aegis EM5">Expanded Mastery 5</dfn>
+: <dfn lt="Aegis EM5">Expanded Mastery 5</dfn>
 :: Prereq: You must be proficient with at least one <a>talisman</a>.
 
 	You channel destructive power into your shields,
@@ -690,7 +690,7 @@ you fashion a ward to deflect blows.
 	even if you don't use it for anything else,
 	would be useful.
 
-: <dfn title="Aegis EM6">Expanded Mastery 6</dfn>
+: <dfn lt="Aegis EM6">Expanded Mastery 6</dfn>
 :: You learn to channel your swirling defensive field
 	into a physical interdiction between yourself and the enemy.
 	As a swift action, you may select a single edge of your current space.
@@ -710,7 +710,7 @@ you fashion a ward to deflect blows.
 		you may select an additional edge to gain cover from.
 	:: 5 Focus: The cover granted by this feat becomes total, rather than low.
 
-: <dfn title="Aegis EM7">Expanded Mastery 7</dfn>
+: <dfn lt="Aegis EM7">Expanded Mastery 7</dfn>
 :: You can channel a vast amount of energy to erect an impenetrable barrier against your foes.
 	If you <a>overchannel</a>,
 	you seal off your square for one full round.
@@ -724,7 +724,7 @@ you fashion a ward to deflect blows.
 	while the shield is still up,
 	before getting to act normally with your remaining actions.
 
-: <dfn title="Aegis EM8">Expanded Mastery 8</dfn>
+: <dfn lt="Aegis EM8">Expanded Mastery 8</dfn>
 :: Your armor becomes nigh-invulnerable,
 	able to deflect the mightiest of blows.
 	The base DR value granted by the Base Mastery increases by two steps permanently.
@@ -735,7 +735,7 @@ you fashion a ward to deflect blows.
 
 You specialize in battlespells, and can twist them to your will.
 
-: <dfn title="Battlespell Mastery EM1|Battlespell Mastery BM">Base Mastery 1</dfn>
+: <dfn lt="Battlespell Mastery EM1|Battlespell Mastery BM">Base Mastery 1</dfn>
 :: Prerequisite: Must be proficient with a <a>talisman</a>.
 
 	Choose two weapon descriptors.
@@ -743,7 +743,7 @@ You specialize in battlespells, and can twist them to your will.
 	(Restriction: the two descriptors may not be Power and Finesse.
 	You can choose Power or Finesse and an additional descriptor, but not both.)
 
-: <dfn title="Battlespell Mastery EM3">Expanded Mastery 3</dfn>
+: <dfn lt="Battlespell Mastery EM3">Expanded Mastery 3</dfn>
 :: Choose up to 3 <a>talismans</a> you are proficient with.  You can cast these spells using any talisman with the same handedness or higher than what the spell expects.  (That is, a battlespell that is normally cast with a two-handed talisman can now be cast with any two-handed talisman, but cannot be cast with a One-handed or Light talisman.  On the other hand, a battlespell that is normally cast with a One-handed talisman can be cast with a one-handed or two-handed talisman, but not a Light talisman.)
 
 Expanded Mastery: 4
@@ -760,14 +760,14 @@ and sometimes even by personal taste,
 so Ironcarnum sees no need to tie itself down to a particular set of magical damage types.
 Instead, it merely specifies that there are generally two types of magic <dfn>energy</dfn>: common and exotic.
 
-<dfn title="common|common energy|common damage">Common energy</dfn> is designed into the system and are easily resistable.
+<dfn lt="common|common energy|common damage">Common energy</dfn> is designed into the system and are easily resistable.
 It is normal to see a monster with the ability to withstand common magic damage.
 This may also be caused by nonmagical sources;
 any damage that can be easily be done without magic
 and isn't a physical damage type should be classified as common
 (fire is an obvious example).
 
-<dfn title="exotic|exotic energy|exotic damage">Exotic energy</dfn> is everything else.
+<dfn lt="exotic|exotic energy|exotic damage">Exotic energy</dfn> is everything else.
 Any damage type that you would not typically see a monster with a defense against is likely exotic.
 For example, in D&D some spells deal holy damage.
 There is no way to resist holy damage,
