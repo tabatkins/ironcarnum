@@ -92,26 +92,54 @@ I think you'll be pleasantly surprised.
 Using Ironcarnum {#using-ironcarnum}
 ====================================
 
-Many readers have contacted me saying that, while they like Ironcarnum, they can't see it fitting into their game. A bit of exploration reveals the problem - they don't like certain assumptions that I make about how the system should be used. Luckily, these assumptions can be trivially changed, allowing Ironcarnum to be integrated into virtually any game with any flavor. I present to you several possible approaches that one may use to integrate Ironcarnum into their game.
+Many readers have contacted me saying that,
+while they like Ironcarnum,
+they can't see it fitting into their game.
+A bit of exploration reveals the problem--
+they don't like certain assumptions that I make about how the system should be used.
+Luckily, these assumptions can be trivially changed,
+allowing Ironcarnum to be integrated into virtually any game with any flavor.
+I present to you several possible approaches that one may use to integrate Ironcarnum into their game.
 
 : The Liberal Approach (the default)
-:: Magic is a skill like any other, merely something that must be learned. True Magic requires dedicating your life to study, but most adventurers pick up the knack for battlemagic during their travels. As such, everyone gets access to the Arcane group and can cast spells (though for most people, this falls under the Other category, and so will never be too strong).
+:: Magic is a skill like any other,
+	merely something that must be learned.
+	<a>True Magic</a> requires dedicating your life to study,
+	but most adventurers pick up the knack for <a>battlemagic</a> during their travels.
+	As such, everyone gets access to the Arcane group and can cast spells
+	(though for most people, this falls under the Other category, and so will never be too strong).
 
 : The Middle Approach
-:: Every person has a spark of magic within them that grows naturally with their strength, but they must be introduced to it before they may begin to wield the power eldritch. All classes gain access to the Arcane category, but they must take at least one level of Arcanist before they may actually take Arcane feats. Here, the Arcanist class acts as a gatekeeper, allowing you to restrict access to magic (by restricting access to the class) but still follow the assumption of level-appropriate power that Ironcarnum is built on.
+:: Every person has a spark of magic within them that grows naturally with their strength,
+	but they must be introduced to it before they may begin to wield the power eldritch.
+	All classes gain access to the Arcane category,
+	but they must take at least one level of Arcanist
+	before they may actually take Arcane feats.
+	Here, the Arcanist class acts as a gatekeeper,
+	allowing you to restrict access to magic
+	(by restricting access to the class)
+	but still follow the assumption of level-appropriate power that Ironcarnum is built on.
 
 : The Conservative Approach
-:: Magic is a study that one must dedicate their life to. Though any adventurer <em>could</em> learn magic, it requires them to spend much personal effort to do so; there is little place for a dabbler in the world. Only the Arcanist class gains access to the Arcane category - other classes will never be able to cast spells, and levels in other classes do not increase your skill with magic.
+:: Magic is a study that one must dedicate their life to.
+	Though any adventurer <em>could</em> learn magic,
+	it requires them to spend much personal effort to do so;
+	there is little place for a dabbler in the world.
+	Only the Arcanist class gains access to the Arcane category--
+	other classes will never be able to cast spells,
+	and levels in other classes do not increase your skill with magic.
 
 
 Other Alterations {#other-alterations}
 --------------------------------------
 
-Ironcarnum may be easily modified in many other ways to suit your game beyond the simple question of access. Here are but a few:
+Ironcarnum may be easily modified in many other ways to suit your game
+beyond the simple question of access.
+Here are but a few:
 
 : Specific Paths
 :: Rather than allowing a character to choose a mental stat to use as their <a>Source</a>
-	(adding to attack and damage with battlespells,
+	(adding to attack and damage with <a>talismans</a>,
 	and occasionally playing a part in other spells),
 	select a specific mental stat that must be employed.
 	Some spells favor the intellectual approach,
@@ -155,9 +183,9 @@ The ease and prevalence of cantrips is something unique to each world,
 but no world needs to put rules into place for these.
 My personal preference is to allow any flavorful cantrip
 that reasonably falls under the purview of a spell they have.
-If a caster has a flame-based battlespell,
+If a caster is proficient with a flame-based <a>talisman</a>,
 they can light candles and torches.
-If they have one based on telekinesis,
+If they are proficient with one based on telekinesis,
 they can float items around.
 
 <dfn>Battlemagic</dfn> is effects that are powerful enough to warrant restriction,
@@ -212,18 +240,9 @@ General Rules {#general-rules}
 Learning Arcana {#learning-arcana}
 ----------------------------------
 
-New magical abilities are gained through \[Arcane] feats.
+New magical abilities are gained through [Arcane] feats.
 The <a>Arcanist</a> class provides additional options,
 allowing one to use magic better than other characters at the expense of other abilities.
-
-Types of Arcana {#types-of-arcana}
-----------------------------------
-
-Arcana is generally divided into two types of magic, <a>battlespells</a> and personal spells.
-Any magic that can harm a foe is a <a>battlespell</a>,
-while magic that increases your own abilities is personal.
-Both use essentially the same rules,
-but it is useful to draw the distinction in many cases.
 
 Using Arcana {#using-arcana}
 ----------------------------
@@ -298,7 +317,7 @@ making it far easier to wield the spell.
 For example, wood ash is strongly associated with fire,
 and so may be integrated into a talisman meant to aid in fire spells.
 
-A <dfn>talisman</dfn> is an \[Arcane] weapon,
+A <dfn>talisman</dfn> is an [Arcane] weapon,
 used to channel offensive spells.
 Talismans act exactly like any other weapon,
 and are used the same way,
@@ -307,7 +326,7 @@ with the following differences:
 * They use a mage's <a>Source</a> to determine attack and damage bonuses,
 	rather than Strength or Dexterity.
 * They are all Exotic weapons,
-	and can't be used untrained unless the wielder has at least one point of \[Arcane] mastery.
+	and can't be used untrained unless the wielder has at least one point of [Arcane] mastery.
 * They may cause <a>energy</a> damage, rather than physical, and may be opposed by a save, rather than Defense
 	(depending on the talisman).
 * Talisman damage <em>is</em> affected by the handedness of the talisman,
@@ -336,11 +355,11 @@ with the following differences:
 Any feat that applies to weapons applies to <a>talismans</a> as well,
 such as Two-Weapon Fighting, Whirlwind Attack, or Weapon Focus.
 
-Note: Talismans never have \[Power] or \[Finesse] descriptors
+Note: Talismans never have [Power] or [Finesse] descriptors
 (though see <a>Battlespell Mastery</a>),
 which does limit what kinds of feats can be used with <a>talismans</a>.
 Similarly, though, some feats defined in this document
-require the use of an \[Arcane] weapon,
+require the use of an [Arcane] weapon,
 and so can't be used with normal weapons.
 
 Similarly, any other rules that applies to weapons applies to <a>talismans</a> as well:
@@ -358,6 +377,13 @@ make the confirmation roll in the same way--
 roll attack,
 then roll the save with a DC equal to the attack's result,
 with a failed save meaning the critical is confirmed.
+
+Merely being proficient with a <a>talisman</a> sometimes grants benefits,
+even if you don't have the <a>talisman</a> in hand.
+For example, <a>Battlespell Mastery</a> lets you treat other <a>talismans</a>
+as if they were one you were proficient with,
+and <a>Aegis EM5</a> infuses your armor with a <a>talisman</a> you're proficient with,
+letting you make counter-attacks with it.
 
 
 Constructing Talismans {#constructing-talismans}
@@ -400,7 +426,7 @@ must equal 3.
 :: (0) Defense
 :: (1) Saving Throw (Select Fortitude, Reflex, or Will)
 
-All <a>talismans</a> have the \[Arcane] descriptor.
+All <a>talismans</a> have the [Arcane] descriptor.
 
 Note: In addition to the stats decided on here,
 <a>talismans</a> get an additional ability for proficient wielders who take EM 3 of <a>Battlespell Mastery</a>.
@@ -432,7 +458,7 @@ as well as the special ability given by <a>Battlespell Mastery</a> EM 3.
 	gain rigid cutting edges.
 	It is a Light weapon that deals 1d6 19-20/x2 Slashing damage in melee,
 	and is opposed by Reflex.
-	EM3 makes the silk flow again, making it a Tripping weapon.
+	EM3 makes the silk flow again, making it a Tripping and Disarming weapon.
 
 : <dfn>Giftmesser</dfn>
 :: Rarely seen in combat, the Giftmesser is a dark creation of the Ancients,
@@ -506,7 +532,7 @@ In addition to <a>talismans</a>,
 simpler battle magic can be wielded just by contorting the the fingers into runic forms
 and channeling magic directly.
 
-<dfn title="hand seal">Hand seals</dfn> are the \[Arcane] equivalent of unarmed attacks.
+<dfn title="hand seal">Hand seals</dfn> are the [Arcane] equivalent of unarmed attacks.
 They are not very strong, but they offer versatility in a pinch.
 
 A <a>hand seal</a> counts as an Unarmed Light weapon,
@@ -519,7 +545,7 @@ deal any type of physical or <a>common energy</a> damage.
 
 Using <a>hand seals</a> uses the same rules as using unarmed strikes.
 
-Anyone with at least one point of \[Arcane] mastery,
+Anyone with at least one point of [Arcane] mastery,
 or with proficiency in at least one <a>talisman</a>,
 has proficiency with <a>hand seals</a>.
 
@@ -593,6 +619,135 @@ has proficiency with <a>hand seals</a>.
 	When it does matter, you can feel clever making the right choice.)
 </details>
 
+
+[Arcane] Feats {#arcane-feats}
+==============================
+
+[Arcane] feats constitute the "affects yourself" side of Ironcarnum,
+as opposed to the "affects others" side represented by <a>talismans</a>.
+They're also the bulk of the complexity of the magic system.
+
+[Arcane] feats use the Arcane mastery category.
+No class, except the <a>Arcanist</a>,
+has the Arcane category specifically listed,
+so it falls under the "Other" category in their stat blocks.
+The Man-at-Arms may choose Arcane as one of his major or minor categories,
+and a Weapon Master may take Arcane as his primary mastery.
+
+Some [Arcane] feats have <a>focus options</a>,
+which let you power up the base effect by spending <a>focus tokens</a>.
+See [[#focus-options]] for a description of how those work.
+
+<dfn>Aegis</dfn> [Arcane] {#aegis-mastery}
+----------------------------------
+
+Melding your talent with your natural defensive instinct,
+you fashion a ward to deflect blows.
+
+: <dfn title="Aegis EM1|Aegis BM">Base Mastery 1</dfn>
+:: You conjure a magical shield that can deflect physical blades or blows.
+	You gain a constant 1d2 DR which counts as light armor.
+	It overlaps (does not stack) with ordinary armor,
+	and is bypassed by anything that bypasses armor DR.
+	This armor has no Max Dex bonus or Armor Check Penalty.
+
+	: Focus Options
+	:: +2 Focus: Increase the die size of your armor by 1 step.
+
+: <dfn title="Aegis EM3">Expanded Mastery 3</dfn>
+:: You infuse greater power into your aegis,
+	giving it the ability to withstand virtually anything.
+	<a>Common energy</a> damage no longer bypasses your DR.
+
+	: Focus Options
+	:: +1 Focus: Choose a single <a>common energy</a> type.
+		You gain a +4 bonus to DR rolls when defending against that type.
+		This ability may be bought multiple times for different energies--
+		each one is counted separately for determining when you exceed your Focus limit.
+	:: 1 Focus: Choose a single <a>exotic energy</a> type.
+		You may apply half your DR roll to any attacks that deal the chosen energy damage.
+
+: <dfn title="Aegis EM4">Expanded Mastery 4</dfn>
+:: Your armor grows in power,
+	able to effortlessly deflect more powerful attacks.
+	The base DR value granted by the Base Mastery increases by one die step permanently.
+
+: <dfn title="Aegis EM5">Expanded Mastery 5</dfn>
+:: Prereq: You must be proficient with at least one <a>talisman</a>.
+
+	You channel destructive power into your shields,
+	and woe to those who cross your defensive line.
+	Choose a single <a>talisman</a> you are proficient with.
+	Anytime a foe strikes you with a melee attack
+	and your DR granted by the base feat successfully negates some of the damage,
+	you may immediately make a single melee attack against them
+	as if you were wielding that <a>talisman</a>.
+	This uses one of your attacks of opportunity for the round.
+	You may change the <a>talisman</a> used in this feat at the beginning of your turn.
+
+	Issue: Is the base damage okay, or should I treat the talisman as Light for this purpose?
+	As stated, it means that learning a 2H talisman,
+	even if you don't use it for anything else,
+	would be useful.
+
+: <dfn title="Aegis EM6">Expanded Mastery 6</dfn>
+:: You learn to channel your swirling defensive field
+	into a physical interdiction between yourself and the enemy.
+	As a swift action, you may select a single edge of your current space.
+	You gain low cover against attacks that cross that edge.
+	As a move action, you gain low cover on all four edges of your current space.
+
+	In either option the cover granted does *not* move, even if you do.
+	Low cover grants a +4 defense bonus against melee and ranged attacks that cross it
+	and are made within 30 feet.
+	Cover interferes with attacks in either direction,
+	but an attacker may ignore low cover is he is closer to it than his target is
+	(that is, the mage's own attacks will typically ignore this cover).
+	See IH pg184 for further details about Cover.
+
+	: Focus Options
+	:: +2 Focus: When you use a swift action to gain cover along a single edge of your space,
+		you may select an additional edge to gain cover from.
+	:: 5 Focus: The cover granted by this feat becomes total, rather than low.
+
+: <dfn title="Aegis EM7">Expanded Mastery 7</dfn>
+:: You can channel a vast amount of energy to erect an impenetrable barrier against your foes.
+	If you <a>overchannel</a>,
+	you seal off your square for one full round.
+	No attacks will harm you,
+	and you may not be targeted by any effect during this time.
+	However, you may not move or interact with the outside world while within your shield.
+
+	Note that the shield persists for one full round.
+	If you use any actions during your turn before you activate this shield,
+	you will have to spend those actions first when your next turn arrives,
+	while the shield is still up,
+	before getting to act normally with your remaining actions.
+
+: <dfn title="Aegis EM8">Expanded Mastery 8</dfn>
+:: Your armor becomes nigh-invulnerable,
+	able to deflect the mightiest of blows.
+	The base DR value granted by the Base Mastery increases by two steps permanently.
+
+
+<dfn>Battlespell Mastery</dfn> [Arcana] {#battlespell-mastery-mastery}
+----------------------------------------------------------------------
+
+You specialize in battlespells, and can twist them to your will.
+
+: <dfn title="Battlespell Mastery EM1|Battlespell Mastery BM">Base Mastery 1</dfn>
+:: Prerequisite: Must be proficient with a <a>talisman</a>.
+
+	Choose two weapon descriptors.
+	All battlespells you cast may be treated as having those descriptors at your discretion.
+	(Restriction: the two descriptors may not be Power and Finesse.
+	You can choose Power or Finesse and an additional descriptor, but not both.)
+
+: <dfn title="Battlespell Mastery EM3">Expanded Mastery 3</dfn>
+:: Choose up to 3 <a>talismans</a> you are proficient with.  You can cast these spells using any talisman with the same handedness or higher than what the spell expects.  (That is, a battlespell that is normally cast with a two-handed talisman can now be cast with any two-handed talisman, but cannot be cast with a One-handed or Light talisman.  On the other hand, a battlespell that is normally cast with a One-handed talisman can be cast with a one-handed or two-handed talisman, but not a Light talisman.)
+
+Expanded Mastery: 4
+You gain proficiency with all battlespells.  If you have already gained proficiency in exotic battlespells via Exotic Weapon Proficiency, you may choose an additional descriptor to add to those spells.
 
 
 Appendix A: Energy Types {#energy-types}
@@ -672,3 +827,94 @@ Simply upgrade the lowest die by one step according to the standard progression.
 
 	d6+d8 ⇨ 2d8 ⇨ d8+d10 ⇨ 2d10 ⇨ d10+d12 ⇨ 2d12 ⇨ d6+d8+d12 ⇨ …
 </div>
+
+
+Appendix C: Duration {#durations}
+=================================
+
+Ironcarnum is a magic system designed for warriors,
+and so the spells in it are designed to be maximally useful to warriors.
+One does not have to carefully shepherd their sword swings for fear of running out
+or count exactly how long their BAB will last in a day;
+neither do warriors have to pay close attention to their magic.
+The spells are designed as innate abilities,
+summonable at will and for as long as desired.
+
+As such, the vast majority of abilities in Ironcarnum are <u>Duration: Instant</u> or <u>Duration: Constant</u>.
+This is the assumed default,
+and so is not listed in the feat description.
+You may use these spells as long and as often as you want.
+Whether a spell is Instant or Constant will be obvious from context.
+Activating an Instant spell is an attack action unless otherwise noted.
+Activating or deactivating a Constant spell is a free action unless otherwise noted.
+
+A small number of spells are more powerful than this, however,
+and require a measure of concentration to cast and maintain.
+This will be indicated by a <u>Duration: Short</u> line in the feat description.
+Short duration spells count as <a>Heavy Exertion</a>,
+and they require Concentration.
+This means that they can be interrupted, per the Concentration skill.
+(Change all instances of "mana spent" to "mastery of the attempted spell".)
+Activating a Short duration spell is a move action unless otherwise noted.
+<strong>You may only maintain a single Short duration spell at a time.</strong>
+
+Finally, some spells are of an appropriate power level for constant use in battle,
+but may be thematically inappropriate for truly constant use
+when you consider their effects on the world at large.
+These spells are designated with a <u>Duration: Long</u> line in the feat description.
+Long duration spells are identical to Constant spells,
+except that they count as <a>Moderate Exertion</a>.
+At the DM's option, Long duration spells may be considered Constant,
+if they feel that the spell would not significantly disrupt their world.
+
+
+Appendix D: Exertion Levels {#exertion-levels}
+=======================================
+
+The rules for <dfn>exertion</dfn> abstract the notion of performing acts
+that are difficult to maintain for long periods.
+All acts fall into one of the following categories:
+
+: <dfn>Minimal Exertion</dfn> (the default)
+:: Unless otherwise noted,
+	all actions count as <a>Minimal Exertion</a>.
+	You can maintain <a>minimal exertion</a> indefinitely.
+
+: <dfn>Light Exertion</dfn>
+:: You can easily maintain light exertion for up to 8 hours a day.
+	For each additional hour you lightly exert yourself,
+	you must make a Constitution check (DC 10, +2 per extra hour).
+	If the check fails, the character takes 1d6 points of nonlethal damage.
+	A character who takes any nonlethal damage from this becomes fatigued.
+	Eliminating the nonlethal damage also eliminates the fatigue.
+	It’s possible for a character to work themself unconsciousness by pushing himself too hard.
+
+: <dfn>Moderate Exertion</dfn>
+:: You can easily maintain moderate exertion for up to an hour.
+	The second hour of moderate exertion in a day deals 1 nonlethal damage,
+	and each additional hour deals double the previous hour's damage.
+	A character who takes any nonlethal damage from this becomes fatigued.
+	Eliminating the nonlethal damage also eliminates the fatigue.
+
+: <dfn>Heavy Exertion</dfn>
+:: You can only maintain heavy exertion
+	for a number of continuous rounds equal to your Constitution score
+	before having to rest for an equal amount of time.
+	You suffer nonlethal damage similar to <a>Moderate Exertion</a> for continuing past your normal limits,
+	except that the relevant unit of time is a number of rounds equal to your Constitution score,
+	rather than an hour.
+	Attempting to act and rest in cycles is treated as <a>Moderate Exertion</a>.
+
+You can combine multiple actions that count as different levels of exertion without any special penalty.
+You are simply treated as undertaking the highest level of exhaustion.
+For example, you can do a dozen things that count as Light Exertion at the same time for hours
+without having to worry about damage,
+but if you add a single Moderate Exertion task you are treated as moderately exerting yourself.
+
+As well, all uses of exhausting acts stack for purposes of tracking exertion limits.
+If you do a moderately exhausting task for half an hour,
+break for a while,
+then take up a different moderately exhausting task,
+you can only perform the second task for a half hour
+before you begin to take damage
+(as you will have then undertaken a full hour of moderately exhausting activity in total).
