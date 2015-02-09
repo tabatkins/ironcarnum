@@ -744,10 +744,18 @@ You specialize in battlespells, and can twist them to your will.
 	You can choose Power or Finesse and an additional descriptor, but not both.)
 
 : <dfn lt="Battlespell Mastery EM3">Expanded Mastery 3</dfn>
-:: Choose up to 3 <a>talismans</a> you are proficient with.  You can cast these spells using any talisman with the same handedness or higher than what the spell expects.  (That is, a battlespell that is normally cast with a two-handed talisman can now be cast with any two-handed talisman, but cannot be cast with a One-handed or Light talisman.  On the other hand, a battlespell that is normally cast with a One-handed talisman can be cast with a one-handed or two-handed talisman, but not a Light talisman.)
+:: Choose up to 3 <a>talismans</a> you are proficient with.
+	You can cast these spells using any talisman with the same handedness or higher than what the spell expects.
+	(That is, a battlespell that is normally cast with a two-handed talisman
+	can now be cast with any two-handed talisman,
+	but cannot be cast with a One-handed or Light talisman.
+	On the other hand, a battlespell that is normally cast with a One-handed talisman
+	can be cast with a one-handed or two-handed talisman, but not a Light talisman.)
 
-Expanded Mastery: 4
-You gain proficiency with all battlespells.  If you have already gained proficiency in exotic battlespells via Exotic Weapon Proficiency, you may choose an additional descriptor to add to those spells.
+: <dfn lt="Battlespell Mastery EM4">Expanded Mastery 4</dfn>
+:: You gain proficiency with all battlespells.
+	If you have already gained proficiency in exotic battlespells via Exotic Weapon Proficiency,
+	you may choose an additional descriptor to add to those spells.
 
 
 Appendix A: Energy Types {#energy-types}
