@@ -591,7 +591,7 @@ has proficiency with <a>hand seals</a>.
 	and wipes out most of the complexity.
 	With this in place,
 	we know the damage (1d4/1d6/1d8), crit (20/x2), and opposition (Defense) for common battle spells.
-	The damage type is undecided, and can be any phyisical or <a>common energy</a> type,
+	The damage type is undecided, and can be any physical or <a>common energy</a> type,
 	so let's just say that users can decide on the fly.
 	This means that common battle magic basically ignores DR/ER
 	(as you can just choose the type that gets around the defenses),
